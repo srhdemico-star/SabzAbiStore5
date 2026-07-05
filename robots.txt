@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://srhdemico-star.github.io/SabzAbiStore2/sitemap.xml
