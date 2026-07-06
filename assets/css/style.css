@@ -1421,16 +1421,14 @@ PRODUCT CARD FIX V1.1
 
 } 
 
+/* Hero Image */
+
 .hero-image img{
     width:100%;
     max-width:500px;
     height:auto;
     margin:auto;
     display:block;
-}
-
-}   /* پایان @media */
-
 }
 
 /* =====================================
