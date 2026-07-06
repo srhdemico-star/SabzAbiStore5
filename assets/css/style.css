@@ -251,6 +251,12 @@ background:#ffffff;
 
 }
 
+.hero{
+min-height:620px;
+display:flex;
+align-items:center;
+}
+
 .hero .container{
 display:grid;
 grid-template-columns:1.35fr .65fr;
@@ -260,7 +266,7 @@ align-items:center;
 
 .hero h1{
 
-font-size:52px;
+font-size:44px;
 
 line-height:1.4;
 
@@ -1428,12 +1434,13 @@ HERO IMAGE FIX
 }
 
 .hero-image img{
-    width:100%;
-    max-width:260px;
-    height:auto;
-    object-fit:contain;
-    filter:drop-shadow(0 20px 35px rgba(0,0,0,.15));
-    transition:.4s;
+
+width:100%;
+max-width:300px;
+height:auto;
+display:block;
+margin:auto;
+
 }
 
 .hero-image img:hover{
