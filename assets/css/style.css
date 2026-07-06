@@ -1419,7 +1419,15 @@ PRODUCT CARD FIX V1.1
     font-size:28px;
     }
 
-}   /* پایان @media */
+} 
+
+.hero-image img{
+    width:100%;
+    max-width:500px;
+    height:auto;
+    margin:auto;
+    display:block;
+}
 
 
 /* =====================================
