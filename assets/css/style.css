@@ -1304,6 +1304,123 @@ color:#fff;
 }
 
 /* =====================================
+PRODUCT CARD FIX V1.1
+===================================== */
+
+/* Card */
+.product-card{
+    display:flex;
+    flex-direction:column;
+    border-radius:22px;
+    overflow:hidden;
+    background:#fff;
+}
+
+/* Image */
+.product-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+}
+
+/* Info */
+.product-info{
+    padding:22px;
+}
+
+/* Title */
+.product-info h3{
+    font-size:34px;
+    margin:12px 0;
+    line-height:1.4;
+}
+
+/* Description */
+.product-info p{
+    color:#666;
+    line-height:2;
+    margin:18px 0;
+}
+
+/* Rating */
+.product-rating{
+    margin:10px 0 18px;
+    color:#f5b301;
+    font-size:24px;
+}
+
+/* Badge */
+.badge{
+    top:18px;
+    right:18px;
+    padding:8px 16px;
+}
+
+/* Favorite */
+.favorite{
+    top:18px;
+    left:18px;
+}
+
+/* Footer */
+.product-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:15px;
+}
+
+/* Price */
+.price-title{
+    display:block;
+    font-size:13px;
+    color:#888;
+    margin-bottom:5px;
+}
+
+.price{
+    font-size:30px;
+    font-weight:800;
+    color:#111;
+}
+
+/* Buttons */
+.product-actions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.product-actions a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.product-card img{
+    height:220px;
+}
+
+.product-actions{
+    grid-template-columns:1fr;
+}
+
+.product-info h3{
+    font-size:28px;
+}
+
+
+/* =====================================
 END OF FILE
 SabzAbi Store V1
 ===================================== */
