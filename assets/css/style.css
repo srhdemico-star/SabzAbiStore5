@@ -255,9 +255,9 @@ background:#ffffff;
 
 display:grid;
 
-grid-template-columns:1fr 1fr;
+grid-template-columns:1.2fr 1.2fr;
 
-gap:60px;
+gap:50px;
 
 align-items:center;
 
@@ -537,9 +537,9 @@ ABOUT SECTION
 
 display:grid;
 
-grid-template-columns:1fr 1fr;
+grid-template-columns:1.2fr .8fr;
 
-gap:60px;
+gap:50px;
 
 align-items:center;
 
@@ -1421,14 +1421,28 @@ PRODUCT CARD FIX V1.1
 
 } 
 
-/* Hero Image */
+
+/* =====================================
+HERO IMAGE FIX
+===================================== */
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
 .hero-image img{
     width:100%;
-    max-width:500px;
+    max-width:320px;
     height:auto;
-    margin:auto;
-    display:block;
+    object-fit:contain;
+    filter:drop-shadow(0 20px 35px rgba(0,0,0,.15));
+    transition:.4s;
+}
+
+.hero-image img:hover{
+    transform:scale(1.03);
 }
 
 /* =====================================
