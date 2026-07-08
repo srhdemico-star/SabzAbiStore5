@@ -1,49 +1,53 @@
-/* ==========================================
-SabzAbi Store
-Main JavaScript V1
-========================================== */
+/* =====================================
+SabzAbi Store V2
+Main JavaScript
+===================================== */
 
-"use strict";
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ==========================
-Current Year
-========================== */
+const header = document.querySelector(".header");
 
-const yearElement = document.getElementById("year");
+window.addEventListener("scroll", () => {
 
-if(yearElement){
+if (window.scrollY > 30) {
 
-yearElement.textContent =
-new Date().getFullYear();
+header.classList.add("scrolled");
 
-}
+} else {
 
-/* ==========================
-Back To Top
-========================== */
-
-const backTop =
-document.querySelector(".back-to-top");
-
-window.addEventListener("scroll",()=>{
-
-if(!backTop) return;
-
-if(window.scrollY>350){
-
-backTop.classList.add("show");
-
-}else{
-
-backTop.classList.remove("show");
+header.classList.remove("scrolled");
 
 }
 
 });
 
-if(backTop){
+/* ==========================
+Back To Top
+========================== */
 
-backTop.addEventListener("click",()=>{
+const topButton = document.createElement("button");
+
+topButton.innerHTML = "↑";
+
+topButton.className = "back-to-top";
+
+document.body.appendChild(topButton);
+
+window.addEventListener("scroll", () => {
+
+if (window.scrollY > 400) {
+
+topButton.classList.add("show");
+
+} else {
+
+topButton.classList.remove("show");
+
+}
+
+});
+
+topButton.addEventListener("click", () => {
 
 window.scrollTo({
 
@@ -55,100 +59,81 @@ behavior:"smooth"
 
 });
 
-}
+});
 
 /* ==========================
-Sticky Header Effect
+Live Product Search
 ========================== */
 
-const header =
-document.querySelector(".header");
+const searchInput = document.querySelector(".search-box input");
 
-window.addEventListener("scroll",()=>{
+if(searchInput){
 
-if(!header) return;
+searchInput.addEventListener("keyup",function(){
 
-if(window.scrollY>40){
+const value=this.value.toLowerCase();
 
-header.style.boxShadow =
-"0 12px 35px rgba(0,0,0,.12)";
+const cards=document.querySelectorAll(".product-card");
+
+cards.forEach(card=>{
+
+const title=card.querySelector("h3").innerText.toLowerCase();
+
+const desc=card.querySelector("p").innerText.toLowerCase();
+
+if(title.includes(value) || desc.includes(value)){
+
+card.style.display="block";
 
 }else{
 
-header.style.boxShadow =
-"0 5px 18px rgba(0,0,0,.08)";
+card.style.display="none";
 
 }
 
 });
+
+});
+
+}
 
 /* ==========================
-Smooth Anchor
+Wishlist
 ========================== */
 
-document.querySelectorAll('a[href^="#"]')
+const wishlistButtons = document.querySelectorAll(".wishlist");
 
-.forEach(link=>{
+wishlistButtons.forEach((button,index)=>{
 
-link.addEventListener("click",function(e){
+const key = "wishlist_" + index;
 
-const target =
-document.querySelector(this.getAttribute("href"));
+if(localStorage.getItem(key)==="true"){
 
-if(target){
+button.classList.add("active");
 
-e.preventDefault();
+button.innerHTML="❤";
 
-target.scrollIntoView({
+}
 
-behavior:"smooth"
+button.addEventListener("click",()=>{
 
-});
+button.classList.toggle("active");
+
+if(button.classList.contains("active")){
+
+button.innerHTML="❤";
+
+localStorage.setItem(key,"true");
+
+}else{
+
+button.innerHTML="♡";
+
+localStorage.removeItem(key);
 
 }
 
 });
-
-});
-
-/* ==========================
-Fade Animation On Scroll
-========================== */
-
-const fadeElements =
-document.querySelectorAll(
-
-".product-card,.counter-box,.mission-card,.why-card,.faq-item,.contact-info,.contact-form"
-
-);
-
-const observer = new IntersectionObserver(
-
-(entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("fade-up");
-
-}
-
-});
-
-},
-
-{
-
-threshold:.15
-
-}
-
-);
-
-fadeElements.forEach(item=>{
-
-observer.observe(item);
 
 });
 
@@ -156,43 +141,29 @@ observer.observe(item);
 Contact Form Validation
 ========================== */
 
-const form =
-document.querySelector("form");
+const contactForm = document.querySelector(".contact-form form");
 
-if(form){
+if(contactForm){
 
-form.addEventListener(
-
-"submit",
-
-function(e){
+contactForm.addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const required =
-form.querySelectorAll(
+const inputs=this.querySelectorAll("input, textarea");
 
-"[required]"
+let valid=true;
 
-);
+inputs.forEach(input=>{
 
-let valid = true;
+if(input.hasAttribute("required") && input.value.trim()===""){
 
-required.forEach(input=>{
-
-if(
-
-input.value.trim()===""
-
-){
+input.style.border="2px solid #ef4444";
 
 valid=false;
 
-input.style.borderColor="#ef4444";
-
 }else{
 
-input.style.borderColor="#16a34a";
+input.style.border="1px solid #d1d5db";
 
 }
 
@@ -200,189 +171,129 @@ input.style.borderColor="#16a34a";
 
 if(valid){
 
-alert(
+alert("✅ پیام شما با موفقیت ثبت شد.");
 
-"پیام شما با موفقیت ثبت شد. از تماس شما سپاسگزاریم."
-
-);
-
-form.reset();
-
-}
-
-}
-
-);
-
-}
-
-/* ==========================
-Image Hover Effect
-========================== */
-
-document
-
-.querySelectorAll(".product-card img")
-
-.forEach(img=>{
-
-img.addEventListener(
-
-"mouseenter",
-
-()=>{
-
-img.style.transform="scale(1.05)";
-
-img.style.transition=".35s";
-
-}
-
-);
-
-img.addEventListener(
-
-"mouseleave",
-
-()=>{
-
-img.style.transform="scale(1)";
-
-}
-
-);
-
-});
-
-/* ==========================
-Mobile Navigation
-========================== */
-
-const menuButton =
-document.querySelector(".menu-toggle");
-
-const navigation =
-document.querySelector("nav");
-
-if(menuButton && navigation){
-
-menuButton.addEventListener("click",()=>{
-
-navigation.classList.toggle("open");
-
-menuButton.classList.toggle("active");
-
-});
-
-}
-
-/* ==========================
-Loading Animation
-========================== */
-
-window.addEventListener("load",()=>{
-
-const loader =
-document.querySelector(".loader");
-
-if(loader){
-
-loader.style.opacity="0";
-
-setTimeout(()=>{
-
-loader.style.display="none";
-
-},500);
+this.reset();
 
 }
 
 });
 
+}
+
+
 /* ==========================
-Product Search
+Product Gallery
 ========================== */
 
-const searchInput =
-document.getElementById("searchProduct");
+const mainImage = document.querySelector(".product-gallery > img");
 
-const categoryFilter =
-document.getElementById("categoryFilter");
+const thumbnails = document.querySelectorAll(".thumbs img");
 
-const cards =
-document.querySelectorAll(".product-card");
+if (mainImage && thumbnails.length > 0) {
 
-function filterProducts(){
+    thumbnails.forEach((thumb) => {
 
-if(!searchInput || !categoryFilter) return;
+        thumb.addEventListener("click", () => {
 
-const keyword =
-searchInput.value.toLowerCase();
+            // تغییر عکس اصلی
+            mainImage.src = thumb.src;
 
-const category =
-categoryFilter.value;
+            // حذف کلاس active از همه
+            thumbnails.forEach((t) => {
+                t.classList.remove("active");
+            });
 
-cards.forEach(card=>{
+            // فعال کردن عکس انتخاب شده
+            thumb.classList.add("active");
 
-const title =
-card.querySelector("h3")
-.textContent.toLowerCase();
+        });
 
-const type =
-card.dataset.category;
+    });
 
-const show =
+}
 
-title.includes(keyword) &&
+/* ==========================
+Animation On Scroll
+========================== */
 
-(category==="all" ||
+const animatedItems = document.querySelectorAll(
 
-type===category);
+".feature-card,.product-card,.category-card,.counter-box,.highlight-card"
 
-card.style.display =
+);
 
-show ? "block" : "none";
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
 
 });
 
-}
+},{
 
-if(searchInput){
+threshold:0.15
 
-searchInput.addEventListener(
+});
 
-"keyup",
+animatedItems.forEach(item=>{
 
-filterProducts
+observer.observe(item);
 
-);
+});
 
-}
-
-if(categoryFilter){
-
-categoryFilter.addEventListener(
-
-"change",
-
-filterProducts
-
-);
-
-}
 
 /* ==========================
-Console Message
+Counter Animation
+========================== */
+
+const counters=document.querySelectorAll(".counter-box h2");
+
+counters.forEach(counter=>{
+
+const updateCounter=()=>{
+
+const target=parseInt(counter.innerText);
+
+const current=+counter.getAttribute("data-count")||0;
+
+const increment=Math.ceil(target/80);
+
+if(current<target){
+
+const value=current+increment;
+
+counter.setAttribute("data-count",value);
+
+counter.innerText=value+"+";
+
+requestAnimationFrame(updateCounter);
+
+}else{
+
+counter.innerText=target+"+";
+
+}
+
+};
+
+updateCounter();
+
+});
+
+
+/* ==========================
+Console
 ========================== */
 
 console.log(
 
-"%cSabzAbi Store V1 Ready 🚀",
-
-"color:#0f766e;font-size:16px;font-weight:bold;"
+"SabzAbi Store V2 Loaded Successfully 🚀"
 
 );
 
-/* ==========================
-End JavaScript
-================================ */

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 
 <head>
@@ -7,19 +8,38 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <title>محصولات | SabzAbi Store</title>
 
-<meta name="description" content="مشاهده محصولات فروشگاه سبزآبی استور">
+<meta name="description"
+content="مشاهده جدیدترین موبایل، پاوربانک، شارژر، هندزفری و لوازم جانبی">
 
-<link rel="stylesheet" href="assets/css/style.css">
+<meta name="theme-color"
+content="#0f766e">
 
-<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="icon"
+href="assets/favicons/favicon.png"
+type="image/png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon"
+href="assets/favicons/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="assets/css/style.css">
+
+<link rel="stylesheet"
+href="assets/css/responsive.css">
 
 </head>
 
@@ -31,13 +51,15 @@
 
 <a href="index.html" class="logo">
 
-<img src="assets/images/logo.png" alt="SabzAbi Store">
+<img
+src="assets/logo/logo.webp"
+alt="SabzAbi Store">
 
 <div>
 
-<h2>SabzAbi Store</h2>
+<h2>SabzAbi</h2>
 
-<span>فروشگاه موبایل و لوازم جانبی</span>
+<span>Mobile & Accessories</span>
 
 </div>
 
@@ -59,9 +81,11 @@
 
 </nav>
 
-<a class="header-phone" href="tel:09032487485">
+<a
+href="tel:09032487485"
+class="header-phone">
 
-📞 09032487485
+09032487485
 
 </a>
 
@@ -69,7 +93,30 @@
 
 </header>
 
-<section class="page-banner">
+
+<section class="breadcrumb">
+
+<div class="container">
+
+<a href="index.html">
+
+خانه
+
+</a>
+
+<span>/</span>
+
+<strong>
+
+محصولات
+
+</strong>
+
+</div>
+
+</section>
+
+<section class="page-title">
 
 <div class="container">
 
@@ -81,7 +128,7 @@
 
 <p>
 
-انواع گوشی موبایل و لوازم جانبی دیجیتال با بهترین قیمت
+جدیدترین موبایل و لوازم جانبی را مشاهده کنید.
 
 </p>
 
@@ -89,69 +136,59 @@
 
 </section>
 
-<section class="product-tools">
+<!-- =====================================
+SEARCH & FILTER
+===================================== -->
+
+<section class="products-toolbar">
 
 <div class="container">
 
-<div class="tool-box">
+<div class="toolbar">
+
+<div class="search-box">
 
 <input
 
 type="text"
 
-id="searchProduct"
+id="searchInput"
 
 placeholder="جستجوی محصول...">
 
+</div>
+
+<div class="filter-box">
+
 <select id="categoryFilter">
 
-<option value="all">
+<option value="all">همه دسته‌ها</option>
 
-همه دسته‌ها
+<option value="mobile">موبایل</option>
 
-</option>
+<option value="powerbank">پاوربانک</option>
 
-<option value="mobile">
+<option value="charger">شارژر</option>
 
-گوشی موبایل
+<option value="earbuds">هندزفری</option>
 
-</option>
+<option value="watch">ساعت هوشمند</option>
 
-<option value="earbuds">
+</select>
 
-هندزفری
+</div>
 
-</option>
+<div class="sort-box">
 
-<option value="powerbank">
+<select id="sortProducts">
 
-پاوربانک
+<option value="new">جدیدترین</option>
 
-</option>
+<option value="cheap">ارزان‌ترین</option>
 
-<option value="charger">
+<option value="expensive">گران‌ترین</option>
 
-شارژر
-
-</option>
-
-<option value="cable">
-
-کابل شارژ
-
-</option>
-
-<option value="watch">
-
-ساعت هوشمند
-
-</option>
-
-<option value="speaker">
-
-اسپیکر
-
-</option>
+<option value="popular">پرفروش‌ترین</option>
 
 </select>
 
@@ -159,465 +196,303 @@ placeholder="جستجوی محصول...">
 
 </div>
 
+</div>
+
 </section>
 
-<section class="products-page">
+<!-- =====================================
+PRODUCT GRID
+===================================== -->
+
+<section class="products-section">
 
 <div class="container">
 
-<div class="product-grid">
+<div class="products-grid">
 
-<div class="product-card fade-up" data-category="mobile">
+<!-- Product 1 -->
 
-    <span class="badge">NEW</span>
+<div class="product-card">
 
-    <div class="favorite">❤</div>
+<span class="badge">جدید</span>
 
-    <img src="assets/images/product1.jpg" alt="گوشی موبایل سامسونگ">
-
-    <div class="product-info">
-
-        <span class="product-category">
-            موبایل
-        </span>
-
-        <h3>
-            Samsung Galaxy S25 Ultra
-        </h3>
-
-        <div class="product-rating">
-            ★★★★★
-        </div>
-
-        <p>
-            جدیدترین گوشی سامسونگ با دوربین حرفه‌ای، نمایشگر Dynamic AMOLED و پردازنده قدرتمند.
-        </p>
-
-        <div class="product-footer">
-
-            <div>
-
-                <span class="price-title">
-                    شروع قیمت
-                </span>
-
-                <span class="price">
-                    تماس بگیرید
-                </span>
-
-            </div>
-
-        </div>
-
-        <div class="product-actions">
-
-            <a href="product.html" class="view-btn">
-                👁 مشاهده
-            </a>
-
-            <a href="contact.html" class="buy-btn">
-                🛒 خرید
-            </a>
-
-            <a href="contact.html" class="call-btn">
-                📞 تماس
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-<div class="product-card" data-category="earbuds">
-
-<img src="assets/images/product2.jpg" alt="هندزفری بلوتوث">
+<img
+src="assets/products/iphone16.webp"
+alt="iPhone 16"
+loading="lazy">
 
 <div class="product-info">
 
-<span class="product-category">
+<span class="brand">Apple</span>
 
-هندزفری
+<h3>iPhone 16 Pro Max</h3>
 
-</span>
+<div class="rating">
 
-<h3>
+★★★★★
 
-هندزفری بلوتوث
+</div>
 
-</h3>
+<div class="price">
 
-<p>
+<span class="new-price">
 
-کیفیت صدای عالی، میکروفون HD و باتری قدرتمند.
-
-</p>
-
-<div class="product-footer">
-
-<span class="price">
-
-تماس بگیرید
+89,900,000 تومان
 
 </span>
 
-<a href="product.html" class="product-btn">
+</div>
 
-مشاهده محصول
+<div class="product-buttons">
+
+<a
+href="product.html"
+class="btn-small">
+
+مشاهده
 
 </a>
 
-</div>
+<button class="btn-cart">
+
+🛒
+
+</button>
 
 </div>
 
 </div>
 
-<div class="product-card" data-category="powerbank">
+</div>
 
-<img src="assets/images/product3.jpg" alt="پاوربانک">
+<!-- Product 2 -->
+
+<div class="product-card">
+
+<img
+src="assets/products/iphone15.webp"
+alt="iPhone 15"
+loading="lazy">
 
 <div class="product-info">
 
-<span class="product-category">
+<span class="brand">Apple</span>
 
-پاوربانک
+<h3>iPhone 15</h3>
 
-</span>
+<div class="rating">
 
-<h3>
+★★★★★
 
-پاوربانک Fast Charge
+</div>
 
-</h3>
+<div class="price">
 
-<p>
+79,900,000 تومان
 
-ظرفیت‌های 10000 تا 30000 میلی‌آمپر با شارژ سریع.
+</div>
 
-</p>
+<div class="product-buttons">
 
-<div class="product-footer">
+<a href="product.html" class="btn-small">
 
-<span class="price">
-
-تماس بگیرید
-
-</span>
-
-<a href="product.html" class="product-btn">
-
-مشاهده محصول
+مشاهده
 
 </a>
 
-</div>
+<button class="btn-cart">
+
+🛒
+
+</button>
 
 </div>
 
 </div>
 
-<div class="product-card" data-category="charger">
+</div>
 
-<img src="assets/images/product4.jpg" alt="شارژر">
+<!-- Product 3 -->
+
+<div class="product-card">
+
+<img
+src="assets/products/powerbank20k.webp"
+alt="Power Bank"
+loading="lazy">
 
 <div class="product-info">
 
-<span class="product-category">
+<span class="brand">Power Bank</span>
 
-شارژر
+<h3>Power Bank 20000mAh</h3>
 
-</span>
+<div class="rating">
 
-<h3>
+★★★★☆
 
-شارژر دیواری
+</div>
 
-</h3>
+<div class="price">
 
-<p>
+2,490,000 تومان
 
-شارژرهای اصلی با پشتیبانی از فناوری Fast Charge.
+</div>
 
-</p>
+<div class="product-buttons">
 
-<div class="product-footer">
+<a href="product.html" class="btn-small">
 
-<span class="price">
-
-تماس بگیرید
-
-</span>
-
-<a href="product.html" class="product-btn">
-
-مشاهده محصول
+مشاهده
 
 </a>
 
-</div>
+<button class="btn-cart">
+
+🛒
+
+</button>
 
 </div>
 
 </div>
 
-<div class="product-card" data-category="cable">
+</div>
 
-<img src="assets/images/product5.jpg" alt="کابل Type-C">
+<!-- Product 4 -->
+
+<div class="product-card">
+
+<img
+src="assets/products/charger45w.webp"
+alt="Charger"
+loading="lazy">
 
 <div class="product-info">
 
-<span class="product-category">
+<span class="brand">Samsung</span>
 
-کابل شارژ
+<h3>45W Fast Charger</h3>
 
-</span>
+<div class="rating">
 
-<h3>
+★★★★★
 
-کابل Type-C فست شارژ
+</div>
 
-</h3>
+<div class="price">
 
-<p>
+1,590,000 تومان
 
-کابل مقاوم با پشتیبانی از شارژ سریع و انتقال اطلاعات با سرعت بالا.
+</div>
 
-</p>
+<div class="product-buttons">
 
-<div class="product-footer">
+<a href="product.html" class="btn-small">
 
-<span class="price">
-
-تماس بگیرید
-
-</span>
-
-<a href="product.html" class="product-btn">
-
-مشاهده محصول
+مشاهده
 
 </a>
 
-</div>
+<button class="btn-cart">
+
+🛒
+
+</button>
 
 </div>
 
 </div>
 
-<div class="product-card" data-category="cable">
+</div>
 
-<img src="assets/images/product6.jpg" alt="کابل Lightning">
+<!-- Product 5 -->
+
+<div class="product-card">
+
+<img
+src="assets/products/earbuds.webp"
+alt="Earbuds"
+loading="lazy">
 
 <div class="product-info">
 
-<span class="product-category">
+<span class="brand">Apple</span>
 
-کابل اپل
+<h3>AirPods Pro</h3>
 
-</span>
+<div class="rating">
 
-<h3>
+★★★★★
 
-کابل Lightning
+</div>
 
-</h3>
+<div class="price">
 
-<p>
+11,900,000 تومان
 
-مناسب آیفون و آیپد، کیفیت ساخت بالا و طول عمر زیاد.
+</div>
 
-</p>
+<div class="product-buttons">
 
-<div class="product-footer">
+<a href="product.html" class="btn-small">
 
-<span class="price">
-
-تماس بگیرید
-
-</span>
-
-<a href="product.html" class="product-btn">
-
-مشاهده محصول
+مشاهده
 
 </a>
 
-</div>
+<button class="btn-cart">
+
+🛒
+
+</button>
 
 </div>
 
 </div>
 
-<div class="product-card" data-category="watch">
+</div>
 
-<img src="assets/images/product7.jpg" alt="ساعت هوشمند">
+<!-- Product 6 -->
+
+<div class="product-card">
+
+<img
+src="assets/products/watch.webp"
+alt="Smart Watch"
+loading="lazy">
 
 <div class="product-info">
 
-<span class="product-category">
+<span class="brand">Apple</span>
 
-گجت هوشمند
+<h3>Apple Watch</h3>
 
-</span>
+<div class="rating">
 
-<h3>
+★★★★★
 
-ساعت هوشمند
+</div>
 
-</h3>
+<div class="price">
 
-<p>
+24,900,000 تومان
 
-نمایش اعلان‌ها، پایش سلامتی، حالت‌های ورزشی و باتری قدرتمند.
+</div>
 
-</p>
+<div class="product-buttons">
 
-<div class="product-footer">
+<a href="product.html" class="btn-small">
 
-<span class="price">
-
-تماس بگیرید
-
-</span>
-
-<a href="product.html" class="product-btn">
-
-مشاهده محصول
+مشاهده
 
 </a>
 
-</div>
+<button class="btn-cart">
 
-</div>
+🛒
 
-</div>
-
-<div class="product-card" data-category="speaker">
-
-<img src="assets/images/product8.jpg" alt="اسپیکر بلوتوث">
-
-<div class="product-info">
-
-<span class="product-category">
-
-اسپیکر
-
-</span>
-
-<h3>
-
-اسپیکر بلوتوث
-
-</h3>
-
-<p>
-
-صدایی شفاف، باس قوی و باتری با ماندگاری بالا برای استفاده روزانه.
-
-</p>
-
-<div class="product-footer">
-
-<span class="price">
-
-تماس بگیرید
-
-</span>
-
-<a href="product.html" class="product-btn">
-
-مشاهده محصول
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="product-card" data-category="mobile">
-
-<img src="assets/images/product9.jpg" alt="گوشی آیفون">
-
-<div class="product-info">
-
-<span class="product-category">
-
-موبایل
-
-</span>
-
-<h3>
-
-گوشی آیفون
-
-</h3>
-
-<p>
-
-انواع مدل‌های آیفون با گارانتی و تضمین اصالت کالا.
-
-</p>
-
-<div class="product-footer">
-
-<span class="price">
-
-تماس بگیرید
-
-</span>
-
-<a href="product.html" class="product-btn">
-
-مشاهده محصول
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="product-card" data-category="earbuds">
-
-<img src="assets/images/product10.jpg" alt="هندزفری گردنی">
-
-<div class="product-info">
-
-<span class="product-category">
-
-هندزفری
-
-</span>
-
-<h3>
-
-هندزفری گردنی
-
-</h3>
-
-<p>
-
-طراحی ارگونومیک، باتری بادوام و مناسب مکالمه و موسیقی.
-
-</p>
-
-<div class="product-footer">
-
-<span class="price">
-
-تماس بگیرید
-
-</span>
-
-<a href="product.html" class="product-btn">
-
-مشاهده محصول
-
-</a>
+</button>
 
 </div>
 
@@ -631,41 +506,85 @@ placeholder="جستجوی محصول...">
 
 </section>
 
-<section class="shop-info">
+<!-- =====================================
+PAGINATION
+===================================== -->
+
+<section class="pagination-section">
 
 <div class="container">
 
-<div class="info-box">
+<div class="pagination">
+
+<a href="#" class="active">1</a>
+
+<a href="#">2</a>
+
+<a href="#">3</a>
+
+<a href="#">4</a>
+
+<a href="#">بعدی →</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box">
 
 <h2>
 
-چرا خرید از SabzAbi Store؟
+محصول مورد نظرت را پیدا نکردی؟
 
 </h2>
 
 <p>
 
-ما تلاش می‌کنیم با ارائه محصولات اصل، قیمت مناسب، پشتیبانی واقعی و ارسال سریع، تجربه‌ای مطمئن از خرید لوازم دیجیتال برای شما فراهم کنیم.
+برای مشاهده محصولات بیشتر یا دریافت مشاوره خرید با ما در ارتباط باش.
 
 </p>
 
-<ul>
+<div class="cta-buttons">
 
-<li>✅ تضمین اصالت کالا</li>
+<a
 
-<li>✅ قیمت رقابتی</li>
+href="contact.html"
 
-<li>✅ پشتیبانی قبل و بعد از خرید</li>
+class="btn">
 
-<li>✅ ارسال سریع</li>
+تماس با ما
 
-</ul>
+</a>
+
+<a
+
+href="https://wa.me/989032487485"
+
+target="_blank"
+
+class="btn-outline">
+
+واتساپ
+
+</a>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
+
+<!-- =====================================
+FOOTER
+===================================== -->
 
 <footer class="footer">
 
@@ -673,27 +592,21 @@ placeholder="جستجوی محصول...">
 
 <div class="footer-grid">
 
-<div class="footer-col">
-
-<img src="assets/images/logo.png" alt="SabzAbi Store" class="footer-logo">
+<div>
 
 <h3>SabzAbi Store</h3>
 
 <p>
 
-فروشگاه تخصصی موبایل و لوازم جانبی دیجیتال در اصفهان.
+فروشگاه تخصصی موبایل و لوازم جانبی
 
 </p>
 
 </div>
 
-<div class="footer-col">
+<div>
 
-<h3>
-
-دسترسی سریع
-
-</h3>
+<h4>دسترسی سریع</h4>
 
 <ul>
 
@@ -709,45 +622,21 @@ placeholder="جستجوی محصول...">
 
 </div>
 
-<div class="footer-col">
+<div>
 
-<h3>
+<h4>ارتباط با ما</h4>
 
-تماس با ما
+<ul>
 
-</h3>
+<li>📞 09032487485</li>
 
-<p>
+<li>🌐 sabzabistore.ir</li>
 
-📞
+<li>📷 @sabzabistore</li>
 
-<a href="tel:09032487485">
+<li>📍 اصفهان</li>
 
-09032487485
-
-</a>
-
-</p>
-
-<p>
-
-📷
-
-<a href="https://instagram.com/sababistore"
-
-target="_blank">
-
-@sababistore
-
-</a>
-
-</p>
-
-<p>
-
-📍 اصفهان
-
-</p>
+</ul>
 
 </div>
 
@@ -759,11 +648,9 @@ target="_blank">
 
 <p>
 
-© <span id="year"></span> تمامی حقوق برای
+© 2026 SabzAbi Store
 
-<strong>SabzAbi Store</strong>
-
-محفوظ است.
+تمام حقوق محفوظ است.
 
 </p>
 
@@ -773,71 +660,8 @@ target="_blank">
 
 </footer>
 
-<script>
-
-document.getElementById("year").textContent =
-new Date().getFullYear();
-
-const searchInput =
-document.getElementById("searchProduct");
-
-const categoryFilter =
-document.getElementById("categoryFilter");
-
-const products =
-document.querySelectorAll(".product-card");
-
-function filterProducts(){
-
-const search =
-searchInput.value.toLowerCase();
-
-const category =
-categoryFilter.value;
-
-products.forEach(product=>{
-
-const title=
-product.querySelector("h3")
-.textContent.toLowerCase();
-
-const productCategory=
-product.dataset.category;
-
-const matchSearch=
-title.includes(search);
-
-const matchCategory=
-category==="all" ||
-productCategory===category;
-
-if(matchSearch && matchCategory){
-
-product.style.display="block";
-
-}else{
-
-product.style.display="none";
-
-}
-
-});
-
-}
-
-searchInput.addEventListener(
-"keyup",
-filterProducts
-);
-
-categoryFilter.addEventListener(
-"change",
-filterProducts
-);
-
-</script>
+<script src="assets/js/app.js"></script>
 
 </body>
 
 </html>
-

@@ -1,623 +1,236 @@
-/* ==========================================
-   SabzAbi Store
-   Responsive CSS V1
-========================================== */
+/* =========================================
+   SabzAbi Store Responsive V2
+========================================= */
 
-
-/* ==============================
-Large Laptop
-============================== */
-
+/* ---------- 1200px ---------- */
 @media (max-width:1200px){
 
 .container{
-
-width:94%;
-
+    width:92%;
 }
 
-.hero h1{
-
-font-size:44px;
-
+.hero-content h1{
+    font-size:46px;
 }
 
-.page-banner h1{
-
-font-size:42px;
-
+.products-grid{
+    grid-template-columns:repeat(3,1fr);
 }
 
-.section-header h2{
-
-font-size:34px;
-
+.category-grid{
+    grid-template-columns:repeat(4,1fr);
 }
 
 }
 
 
-/* ==============================
-Tablet
-============================== */
+/* ---------- 992px ---------- */
 
 @media (max-width:992px){
 
 .header .container{
-
-flex-wrap:wrap;
-
-gap:20px;
-
+    flex-wrap:wrap;
 }
 
 nav{
-
-width:100%;
-
+    width:100%;
+    margin-top:20px;
 }
 
 nav ul{
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:18px;
-
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
 .hero .container{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
+    flex-direction:column-reverse;
+    text-align:center;
 }
 
-.hero-image{
-
-order:-1;
-
-}
-
-.hero h1{
-
-font-size:38px;
-
+.hero-content{
+    max-width:100%;
 }
 
 .hero-buttons{
-
-justify-content:center;
-
+    justify-content:center;
 }
 
-.about-grid,
-
-.single-grid,
-
-.contact-grid{
-
-grid-template-columns:1fr;
-
+.hero-image img{
+    max-width:420px;
 }
 
-.counter-grid{
-
-grid-template-columns:repeat(2,1fr);
-
+.products-grid{
+    grid-template-columns:repeat(2,1fr);
 }
 
+.category-grid{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.feature-grid,
+.why-grid,
 .footer-grid{
-
-grid-template-columns:repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
 }
 
-.product-grid{
-
-grid-template-columns:repeat(2,1fr);
-
+.about-content{
+    flex-direction:column;
 }
 
-.mission-grid,
-
-.why-grid{
-
-grid-template-columns:repeat(2,1fr);
-
+.counter{
+    grid-template-columns:repeat(2,1fr);
 }
 
 }
 
-/* ==============================
-Mobile
-============================== */
+
+/* ---------- 768px ---------- */
 
 @media (max-width:768px){
 
-body{
-
-font-size:15px;
-
-}
-
 .header{
-
-padding:8px 0;
-
-}
-
-.header .container{
-
-flex-direction:column;
-
-gap:18px;
-
-}
-
-.logo{
-
-justify-content:center;
-
-}
-
-.logo h2{
-
-font-size:22px;
-
-}
-
-.logo span{
-
-font-size:12px;
-
-}
-
-nav ul{
-
-flex-direction:column;
-
-align-items:center;
-
-gap:12px;
-
-}
-
-.header-phone{
-
-width:100%;
-
-text-align:center;
-
-}
-
-.hero{
-
-padding:60px 0;
-
-}
-
-.hero h1{
-
-font-size:30px;
-
-line-height:1.7;
-
-}
-
-.hero p{
-
-font-size:16px;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-}
-
-.hero-buttons a{
-
-width:100%;
-
-}
-
-.page-banner{
-
-padding:60px 0;
-
-}
-
-.page-banner h1{
-
-font-size:32px;
-
-}
-
-.section-header{
-
-margin-bottom:40px;
-
-}
-
-.section-header h2{
-
-font-size:28px;
-
-}
-
-.section-header p{
-
-font-size:15px;
-
-}
-
-.product-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.counter-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.footer-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.mission-grid,
-
-.why-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.contact-grid,
-
-.about-grid,
-
-.single-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.product-image{
-
-margin-bottom:25px;
-
-}
-
-.product-buttons{
-
-flex-direction:column;
-
-}
-
-.product-buttons a{
-
-width:100%;
-
-text-align:center;
-
-}
-
-.tool-box{
-
-display:flex;
-
-flex-direction:column;
-
-gap:15px;
-
-}
-
-.tool-box input,
-
-.tool-box select{
-
-width:100%;
-
-}
-
-.cta-box,
-
-.quick-box,
-
-.instagram-box{
-
-padding:35px 25px;
-
-}
-
-.cta-box h2,
-
-.quick-box h2,
-
-.instagram-box h2{
-
-font-size:28px;
-
-}
-
-.cta-buttons,
-
-.quick-buttons{
-
-flex-direction:column;
-
-}
-
-.cta-buttons a,
-
-.quick-buttons a{
-
-width:100%;
-
-}
-
-.footer{
-
-text-align:center;
-
-}
-
-.footer-logo{
-
-margin:auto;
-
-}
-
-.map-placeholder{
-
-height:250px;
-
-font-size:22px;
-
-}
-
-}
-
-/* ==============================
-Small Mobile
-============================== */
-
-@media (max-width:480px){
-
-.container{
-
-width:94%;
-
+    padding:14px 0;
 }
 
 .logo img{
-
-width:46px;
-
-height:46px;
-
+    width:48px;
 }
 
 .logo h2{
+    font-size:20px;
+}
 
-font-size:20px;
-
+nav ul{
+    gap:18px;
 }
 
 .hero{
-
-padding:45px 0;
-
+    padding:60px 0;
 }
 
-.hero h1{
-
-font-size:26px;
-
+.hero-content h1{
+    font-size:34px;
+    line-height:1.4;
 }
 
-.hero p{
-
-font-size:15px;
-
+.hero-content p{
+    font-size:15px;
 }
 
-.page-banner{
-
-padding:45px 0;
-
+.hero-image img{
+    width:90%;
 }
 
-.page-banner h1{
-
-font-size:28px;
-
+.section-title{
+    font-size:28px;
 }
 
-.section-header h2{
-
-font-size:24px;
-
+.products-grid{
+    grid-template-columns:1fr;
 }
 
-.section-header p{
-
-font-size:14px;
-
+.category-grid{
+    grid-template-columns:repeat(2,1fr);
 }
 
-.product-card img{
-
-height:200px;
-
+.feature-grid,
+.footer-grid,
+.why-grid{
+    grid-template-columns:1fr;
 }
 
-.product-info{
-
-padding:18px;
-
-}
-
-.product-info h3{
-
-font-size:20px;
-
-}
-
-.price{
-
-font-size:17px;
-
-}
-
-.btn,
-
-.btn-outline,
-
-.product-btn{
-
-width:100%;
-
-justify-content:center;
-
-padding:14px;
-
-}
-
-.contact-info,
-
-.contact-form,
-
-.counter-box,
-
-.mission-card,
-
-.why-card{
-
-padding:22px;
-
-}
-
-.product-specs{
-
-display:block;
-
-overflow-x:auto;
-
-white-space:nowrap;
-
-}
-
-.product-specs th,
-
-.product-specs td{
-
-padding:12px;
-
-font-size:14px;
-
+.counter{
+    grid-template-columns:1fr 1fr;
 }
 
 .footer{
-
-padding:50px 0 20px;
-
+    text-align:center;
 }
 
-.footer h3{
-
-font-size:20px;
-
-}
-
-.footer p,
-
-.footer a{
-
-font-size:14px;
-
-}
-
-.back-to-top{
-
-left:15px;
-
-bottom:15px;
-
-width:46px;
-
-height:46px;
-
-font-size:18px;
-
-}
-
-.map-placeholder{
-
-height:200px;
-
-font-size:20px;
-
+.footer ul{
+    padding:0;
 }
 
 }
 
-/* ==============================
-Landscape Phones
-============================== */
 
-@media (max-height:500px){
+/* ---------- 576px ---------- */
 
-.hero{
-
-padding:35px 0;
-
-}
-
-.page-banner{
-
-padding:35px 0;
-
-}
-
-}
-
-/* ==============================
-High Resolution Screens
-============================== */
-
-@media (min-width:1600px){
+@media (max-width:576px){
 
 .container{
+    width:94%;
+}
 
-max-width:1400px;
+.header-phone{
+    display:none;
+}
+
+.hero{
+    padding:45px 0;
+}
+
+.hero-content h1{
+    font-size:28px;
+}
+
+.hero-content p{
+    font-size:14px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.hero-buttons a{
+    width:100%;
+}
+
+.hero-image img{
+    width:100%;
+}
+
+.category-grid{
+    grid-template-columns:1fr;
+}
+
+.counter{
+    grid-template-columns:1fr;
+}
+
+.feature-card,
+.product-card,
+.category-card{
+    padding:20px;
+}
+
+footer{
+    font-size:14px;
+}
 
 }
 
-.hero h1{
 
-font-size:60px;
+/* ---------- 420px ---------- */
 
+@media (max-width:420px){
+
+.logo h2{
+    font-size:18px;
 }
 
-.section-header h2{
+.hero-content h1{
+    font-size:24px;
+}
 
-font-size:46px;
+.section-title{
+    font-size:24px;
+}
 
+.btn,
+.btn-outline{
+    width:100%;
+    text-align:center;
 }
 
 }
-
-/* ==========================================
-End Responsive File
-SabzAbi Store V1
-========================================== */
