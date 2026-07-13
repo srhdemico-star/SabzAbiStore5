@@ -165,155 +165,169 @@ function initBackToTop() {
    Products Search
 ====================================== */
 
-function initProductSearch() {
+/* ======================================
+   Products Filter + Search + Sort
+====================================== */
 
-    const input = $("#searchInput");
+function updateProducts() {
 
-    if (!input) return;
+    const search =
+        ($("#searchInput")?.value || "")
+        .toLowerCase();
 
-    input.addEventListener("keyup", () => {
+    const category =
+        $("#categoryFilter")?.value || "all";
 
-        const value = input.value.toLowerCase();
+    const sort =
+        $("#sortProducts")?.value || "default";
 
-        const cards = $$(".product-card");
+    const grid = $(".products-grid");
 
-        cards.forEach(card => {
+    if (!grid) return;
 
-            const title = card.innerText.toLowerCase();
+    let cards = [...$$(".product-card")];
 
-            if (title.includes(value)) {
 
-                card.style.display = "";
 
-            } else {
+    cards.forEach(card => {
 
-                card.style.display = "none";
+        const title =
+            card.querySelector("h3")
+            ?.innerText
+            .toLowerCase() || "";
 
-            }
+        const matchSearch =
+            title.includes(search);
 
-        });
+        const matchCategory =
+            category === "all"
+            || card.dataset.category === category;
 
-        checkEmptyProducts();
+        card.style.display =
+            (matchSearch && matchCategory)
+                ? ""
+                : "none";
 
     });
+
+
+
+    let visible =
+        cards.filter(card =>
+            card.style.display !== "none"
+        );
+
+
+
+    switch (sort) {
+
+        case "cheap":
+
+            visible.sort((a,b)=>
+
+                Number(a.dataset.price)
+
+                -
+
+                Number(b.dataset.price)
+
+            );
+
+            break;
+
+
+
+        case "expensive":
+
+            visible.sort((a,b)=>
+
+                Number(b.dataset.price)
+
+                -
+
+                Number(a.dataset.price)
+
+            );
+
+            break;
+
+
+
+        case "new":
+
+            visible.sort((a,b)=>
+
+                Number(b.dataset.id)
+
+                -
+
+                Number(a.dataset.id)
+
+            );
+
+            break;
+
+    }
+
+
+
+    visible.forEach(card=>{
+
+        grid.appendChild(card);
+
+    });
+
+
+
+    checkEmptyProducts();
 
 }
 
 
-/* ======================================
-   Category Filter
-====================================== */
 
-function initCategoryFilter() {
+function initProductSearch(){
 
-    const select = $("#categoryFilter");
+    $("#searchInput")
 
-    if (!select) return;
+    ?.addEventListener(
 
-    select.addEventListener("change", () => {
+        "keyup",
 
-        const category = select.value;
+        updateProducts
 
-        const cards = $$(".product-card");
-
-        cards.forEach(card => {
-
-            if (category === "all") {
-
-                card.style.display = "";
-
-                return;
-
-            }
-
-            if (card.dataset.category === category) {
-
-                card.style.display = "";
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
-
-        checkEmptyProducts();
-
-    });
+    );
 
 }
 
 
-/* ======================================
-   Product Sort
-====================================== */
 
-function initProductSort() {
+function initCategoryFilter(){
 
-    const sort = $("#sortProducts");
+    $("#categoryFilter")
 
-    if (!sort) return;
+    ?.addEventListener(
 
-    sort.addEventListener("change", () => {
+        "change",
 
-        const grid = $(".products-grid");
+        updateProducts
 
-        const cards = [...$$(".product-card")];
+    );
 
-        if (!grid) return;
+}
 
-        switch (sort.value) {
 
-            case "cheap":
 
-                cards.sort((a, b) => {
+function initProductSort(){
 
-                    return Number(a.dataset.price)
+    $("#sortProducts")
 
-                        - Number(b.dataset.price);
+    ?.addEventListener(
 
-                });
+        "change",
 
-                break;
+        updateProducts
 
-            case "expensive":
-
-                cards.sort((a, b) => {
-
-                    return Number(b.dataset.price)
-
-                        - Number(a.dataset.price);
-
-                });
-
-                break;
-
-            case "new":
-
-                cards.sort((a, b) => {
-
-                    return Number(b.dataset.id)
-
-                        - Number(a.dataset.id);
-
-                });
-
-                break;
-
-            default:
-
-                break;
-
-        }
-
-        cards.forEach(card => {
-
-            grid.appendChild(card);
-
-        });
-
-    });
+    );
 
 }
 
@@ -420,7 +434,7 @@ function initQuantity() {
 
     const input = $("#quantity");
 
-    if (!minus  !plus  !input) return;
+    if (!minus || !plus || !input) return;
 
     minus.addEventListener("click", () => {
 
@@ -593,12 +607,10 @@ function initRippleButtons() {
             const rect = this.getBoundingClientRect();
 
 
-            ripple.style.left =
-                ${e.clientX - rect.left}px;
+            ripple.style.left = `${e.clientX - rect.left}px`;
 
 
-            ripple.style.top =
-                ${e.clientY - rect.top}px;
+            ripple.style.top = `${e.clientY - rect.top}px`;
 
 
             this.appendChild(ripple);
