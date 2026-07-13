@@ -6,86 +6,114 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+محصولات | SabzAbi Store
+</title>
 
-<title>محصولات | SabzAbi Store</title>
+<meta
+name="description"
+content="جدیدترین محصولات فروشگاه سبز آبی استور">
 
-<meta name="description"
-content="مشاهده جدیدترین موبایل، پاوربانک، شارژر، هندزفری و لوازم جانبی">
-
-<meta name="theme-color"
-content="#0f766e">
-
-<link rel="icon"
-href="assets/favicons/favicon.png"
-type="image/png">
-
-<link rel="apple-touch-icon"
-href="assets/favicons/apple-touch-icon.png">
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet"
+<link
+rel="stylesheet"
 href="assets/css/style.css">
 
-<link rel="stylesheet"
+<link
+rel="stylesheet"
 href="assets/css/responsive.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
+
+
+<!-- =========================
+HEADER
+========================= -->
+
 <header class="header">
 
 <div class="container">
 
-<a href="index.html" class="logo">
+<a
+href="index.html"
+class="logo">
 
 <img
 src="assets/logo/logo.webp"
 alt="SabzAbi Store">
 
-<div>
-
-<h2>SabzAbi</h2>
-
-<span>Mobile & Accessories</span>
-
-</div>
+<h2>SabzAbi Store</h2>
 
 </a>
+
+
 
 <nav>
 
 <ul>
 
-<li><a href="index.html">خانه</a></li>
+<li>
 
-<li><a class="active" href="products.html">محصولات</a></li>
+<a href="index.html">
 
-<li><a href="about.html">درباره ما</a></li>
+خانه
 
-<li><a href="contact.html">تماس با ما</a></li>
+</a>
+
+</li>
+
+<li>
+
+<a
+class="active"
+href="products.html">
+
+محصولات
+
+</a>
+
+</li>
+
+<li>
+
+<a href="about.html">
+
+درباره ما
+
+</a>
+
+</li>
+
+<li>
+
+<a href="contact.html">
+
+تماس با ما
+
+</a>
+
+</li>
 
 </ul>
 
 </nav>
 
-<a
-href="tel:09032487485"
-class="header-phone">
 
-09032487485
+
+<a
+href="contact.html"
+class="btn">
+
+تماس با ما
 
 </a>
 
@@ -94,29 +122,12 @@ class="header-phone">
 </header>
 
 
-<section class="breadcrumb">
 
-<div class="container">
+<!-- =========================
+PAGE HEADER
+========================= -->
 
-<a href="index.html">
-
-خانه
-
-</a>
-
-<span>/</span>
-
-<strong>
-
-محصولات
-
-</strong>
-
-</div>
-
-</section>
-
-<section class="page-title">
+<section class="page-header">
 
 <div class="container">
 
@@ -128,7 +139,7 @@ class="header-phone">
 
 <p>
 
-جدیدترین موبایل و لوازم جانبی را مشاهده کنید.
+تمام محصولات فروشگاه سبز آبی استور
 
 </p>
 
@@ -136,17 +147,19 @@ class="header-phone">
 
 </section>
 
-<!-- =====================================
-SEARCH & FILTER
-===================================== -->
 
-<section class="products-toolbar">
+
+<!-- =========================
+PRODUCTS
+========================= -->
+
+<section class="products-section">
 
 <div class="container">
 
-<div class="toolbar">
 
-<div class="search-box">
+
+<div class="products-toolbar">
 
 <input
 
@@ -156,86 +169,115 @@ id="searchInput"
 
 placeholder="جستجوی محصول...">
 
-</div>
 
-<div class="filter-box">
 
 <select id="categoryFilter">
 
-<option value="all">همه دسته‌ها</option>
+<option value="all">
 
-<option value="mobile">موبایل</option>
+همه دسته بندی ها
 
-<option value="powerbank">پاوربانک</option>
+</option>
 
-<option value="charger">شارژر</option>
+<option value="mobile">
 
-<option value="earbuds">هندزفری</option>
+گوشی موبایل
 
-<option value="watch">ساعت هوشمند</option>
+</option>
+
+<option value="earbuds">
+
+هندزفری
+
+</option>
+
+<option value="watch">
+
+ساعت هوشمند
+
+</option>
+
+<option value="powerbank">
+
+پاوربانک
+
+</option>
+
+<option value="charger">
+
+شارژر و کابل
+
+</option>
 
 </select>
 
-</div>
 
-<div class="sort-box">
 
 <select id="sortProducts">
 
-<option value="new">جدیدترین</option>
+<option value="default">
 
-<option value="cheap">ارزان‌ترین</option>
+مرتب سازی
 
-<option value="expensive">گران‌ترین</option>
+</option>
 
-<option value="popular">پرفروش‌ترین</option>
+<option value="cheap">
+
+ارزان ترین
+
+</option>
+
+<option value="expensive">
+
+گران ترین
+
+</option>
+
+<option value="new">
+
+جدیدترین
+
+</option>
 
 </select>
 
 </div>
 
-</div>
 
-</div>
-
-</section>
-
-<!-- =====================================
-PRODUCT GRID
-===================================== -->
-
-<section class="products-section">
-
-<div class="container">
 
 <div class="products-grid">
 
-<!-- Product 1 -->
+<!-- =========================
+MOBILE PRODUCTS
+========================= -->
 
-<div class="product-card">
+<div class="product-card"
 
-<span class="badge">جدید</span>
+data-id="1"
+
+data-category="mobile"
+
+data-price="89900000">
 
 <img
 src="assets/products/iphone16.webp"
-alt="iPhone 16"
-loading="lazy">
+alt="iPhone 16 Pro Max">
 
-<div class="product-info">
+<div class="favorite">
 
-<span class="brand">Apple</span>
-
-<h3>iPhone 16 Pro Max</h3>
-
-<div class="rating">
-
-★★★★★
+<i class="fa-solid fa-heart"></i>
 
 </div>
 
-<div class="price">
+<div class="product-info">
 
-<span class="new-price">
+<h3>iPhone 16 Pro Max</h3>
+
+<p>Apple</p>
+
+<div class="product-price">
+
+<span class="price">
 
 89,900,000 تومان
 
@@ -243,336 +285,1085 @@ loading="lazy">
 
 </div>
 
-<div class="product-buttons">
-
 <a
-href="product.html"
-class="btn-small">
+href="product.html?id=1"
+class="btn-product">
 
-مشاهده
+مشاهده محصول
 
 </a>
 
-<button class="btn-cart">
-
-🛒
-
-</button>
-
 </div>
 
 </div>
 
-</div>
 
-<!-- Product 2 -->
 
-<div class="product-card">
+<div class="product-card"
+
+data-id="2"
+
+data-category="mobile"
+
+data-price="74900000">
 
 <img
 src="assets/products/iphone15.webp"
-alt="iPhone 15"
-loading="lazy">
+alt="iPhone 15">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
 
 <div class="product-info">
-
-<span class="brand">Apple</span>
 
 <h3>iPhone 15</h3>
 
-<div class="rating">
+<p>Apple</p>
 
-★★★★★
+<div class="product-price">
+
+<span class="price">
+
+74,900,000 تومان
+
+</span>
 
 </div>
 
-<div class="price">
+<a
+href="product.html?id=2"
+class="btn-product">
 
-79,900,000 تومان
-
-</div>
-
-<div class="product-buttons">
-
-<a href="product.html" class="btn-small">
-
-مشاهده
+مشاهده محصول
 
 </a>
 
-<button class="btn-cart">
-
-🛒
-
-</button>
-
 </div>
 
 </div>
 
-</div>
 
-<!-- Product 3 -->
 
-<div class="product-card">
+<div class="product-card"
+
+data-id="3"
+
+data-category="mobile"
+
+data-price="68900000">
 
 <img
-src="assets/products/powerbank20k.webp"
-alt="Power Bank"
-loading="lazy">
+src="assets/products/s25ultra.webp"
+alt="Samsung S25 Ultra">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
 
 <div class="product-info">
 
-<span class="brand">Power Bank</span>
+<h3>Samsung S25 Ultra</h3>
 
-<h3>Power Bank 20000mAh</h3>
+<p>Samsung</p>
 
-<div class="rating">
+<div class="product-price">
 
-★★★★☆
+<span class="price">
 
-</div>
+68,900,000 تومان
 
-<div class="price">
-
-2,490,000 تومان
+</span>
 
 </div>
 
-<div class="product-buttons">
+<a
+href="product.html?id=3"
+class="btn-product">
 
-<a href="product.html" class="btn-small">
-
-مشاهده
+مشاهده محصول
 
 </a>
 
-<button class="btn-cart">
+</div>
 
-🛒
+</div>
 
-</button>
+
+
+<div class="product-card"
+
+data-id="4"
+
+data-category="mobile"
+
+data-price="52900000">
+
+<img
+src="assets/products/xiaomi15.webp"
+alt="Xiaomi 15">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<div class="product-info">
+
+<h3>Xiaomi 15</h3>
+
+<p>Xiaomi</p>
+
+<div class="product-price">
+
+<span class="price">
+
+52,900,000 تومان
+
+</span>
+
+</div>
+
+<a
+href="product.html?id=4"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
 
 </div>
 
 </div>
 
+
+
+<div class="product-card"
+
+data-id="5"
+
+data-category="mobile"
+
+data-price="38900000">
+
+<img
+src="assets/products/pocof7.webp"
+alt="Poco F7 Pro">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
 </div>
 
-<!-- Product 4 -->
+<div class="product-info">
 
-<div class="product-card">
+<h3>Poco F7 Pro</h3>
+
+<p>Xiaomi</p>
+
+<div class="product-price">
+
+<span class="price">
+
+38,900,000 تومان
+
+</span>
+
+</div>
+
+<a
+href="product.html?id=5"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================
+EARBUDS PRODUCTS
+========================= -->
+
+<div class="product-card"
+
+data-id="6"
+
+data-category="earbuds"
+
+data-price="12900000">
+
+<img
+src="assets/products/airpodspro2.webp"
+alt="AirPods Pro 2">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<div class="product-info">
+
+<h3>AirPods Pro 2</h3>
+
+<p>Apple</p>
+
+<div class="product-price">
+
+<span class="price">
+
+12,900,000 تومان
+
+</span>
+
+</div>
+
+<a
+href="product.html?id=6"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="7"
+
+data-category="earbuds"
+
+data-price="8900000">
+
+<img
+src="assets/products/galaxybuds3.webp"
+alt="Galaxy Buds 3">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<div class="product-info">
+
+<h3>Galaxy Buds 3</h3>
+
+<p>Samsung</p>
+
+<div class="product-price">
+
+<span class="price">
+
+8,900,000 تومان
+
+</span>
+
+</div>
+
+<a
+href="product.html?id=7"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="8"
+
+data-category="earbuds"
+
+data-price="1690000">
+
+<img
+src="assets/products/qcyt13.webp"
+alt="QCY T13">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<div class="product-info">
+
+<h3>QCY T13</h3>
+
+<p>QCY</p>
+
+<div class="product-price">
+
+<span class="price">
+
+1,690,000 تومان
+
+</span>
+
+</div>
+
+<a
+href="product.html?id=8"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="9"
+
+data-category="earbuds"
+
+data-price="4590000">
+
+<img
+src="assets/products/jbltune.webp"
+alt="JBL Tune">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<div class="product-info">
+
+<h3>JBL Tune</h3>
+
+<p>JBL</p>
+
+<div class="product-price">
+
+<span class="price">
+
+4,590,000 تومان
+
+</span>
+
+</div>
+
+<a
+href="product.html?id=9"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="10"
+
+data-category="earbuds"
+
+data-price="2190000">
+
+<img
+src="assets/products/hayloux1.webp"
+alt="Haylou X1">
+
+<div class="favorite">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+<div class="product-info">
+
+<h3>Haylou X1</h3>
+
+<p>Haylou</p>
+
+<div class="product-price">
+
+<span class="price">
+
+2,190,000 تومان
+
+</span>
+
+</div>
+
+<a
+href="product.html?id=10"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================
+SMART WATCH PRODUCTS
+========================= -->
+
+<div class="product-card"
+
+data-id="11"
+
+data-category="watch"
+
+data-price="24900000">
+
+<img
+src="assets/products/applewatch.webp"
+alt="Apple Watch Series 10">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Apple Watch Series 10</h3>
+
+<p>Apple</p>
+
+<div class="product-price">
+<span class="price">
+24,900,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=11"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="12"
+
+data-category="watch"
+
+data-price="16900000">
+
+<img
+src="assets/products/galaxywatch.webp"
+alt="Galaxy Watch 8">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Galaxy Watch 8</h3>
+
+<p>Samsung</p>
+
+<div class="product-price">
+<span class="price">
+16,900,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=12"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="13"
+
+data-category="watch"
+
+data-price="9990000">
+
+<img
+src="assets/products/xiaomiwatch.webp"
+alt="Xiaomi Watch">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Xiaomi Watch</h3>
+
+<p>Xiaomi</p>
+
+<div class="product-price">
+<span class="price">
+9,990,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=13"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="14"
+
+data-category="watch"
+
+data-price="8990000">
+
+<img
+src="assets/products/amazfit.webp"
+alt="Amazfit GTR">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Amazfit GTR</h3>
+
+<p>Amazfit</p>
+
+<div class="product-price">
+<span class="price">
+8,990,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=14"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="15"
+
+data-category="watch"
+
+data-price="4290000">
+
+<img
+src="assets/products/haylouwatch.webp"
+alt="Haylou Watch">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Haylou Watch</h3>
+
+<p>Haylou</p>
+
+<div class="product-price">
+<span class="price">
+4,290,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=15"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================
+POWERBANK PRODUCTS
+========================= -->
+
+<div class="product-card"
+
+data-id="16"
+
+data-category="powerbank"
+
+data-price="3990000">
+
+<img
+src="assets/products/anker20000.webp"
+alt="Anker 20000">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Anker 20000mAh</h3>
+
+<p>Anker</p>
+
+<div class="product-price">
+<span class="price">
+3,990,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=16"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="17"
+
+data-category="powerbank"
+
+data-price="2990000">
+
+<img
+src="assets/products/baseus20000.webp"
+alt="Baseus 20000">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Baseus 20000mAh</h3>
+
+<p>Baseus</p>
+
+<div class="product-price">
+<span class="price">
+2,990,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=17"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="18"
+
+data-category="powerbank"
+
+data-price="2490000">
+
+<img
+src="assets/products/xiaomi20000.webp"
+alt="Xiaomi 20000">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Xiaomi 20000mAh</h3>
+
+<p>Xiaomi</p>
+
+<div class="product-price">
+<span class="price">
+2,490,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=18"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="19"
+
+data-category="powerbank"
+
+data-price="2190000">
+
+<img
+src="assets/products/greenlion.webp"
+alt="Green Lion">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Green Lion 20000</h3>
+
+<p>Green Lion</p>
+
+<div class="product-price">
+<span class="price">
+2,190,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=19"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="20"
+
+data-category="powerbank"
+
+data-price="2690000">
+
+<img
+src="assets/products/mcdodo20000.webp"
+alt="Mcdodo">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Mcdodo 20000mAh</h3>
+
+<p>Mcdodo</p>
+
+<div class="product-price">
+<span class="price">
+2,690,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=20"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================
+CHARGER & CABLE PRODUCTS
+========================= -->
+
+<div class="product-card"
+
+data-id="21"
+
+data-category="charger"
+
+data-price="1490000">
 
 <img
 src="assets/products/charger45w.webp"
-alt="Charger"
-loading="lazy">
+alt="45W Charger">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
 
 <div class="product-info">
 
-<span class="brand">Samsung</span>
+<h3>شارژر 45 وات</h3>
 
-<h3>45W Fast Charger</h3>
+<p>Fast Charger</p>
 
-<div class="rating">
-
-★★★★★
-
+<div class="product-price">
+<span class="price">
+1,490,000 تومان
+</span>
 </div>
-
-<div class="price">
-
-1,590,000 تومان
-
-</div>
-
-<div class="product-buttons">
-
-<a href="product.html" class="btn-small">
-
-مشاهده
-
-</a>
-
-<button class="btn-cart">
-
-🛒
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Product 5 -->
-
-<div class="product-card">
-
-<img
-src="assets/products/earbuds.webp"
-alt="Earbuds"
-loading="lazy">
-
-<div class="product-info">
-
-<span class="brand">Apple</span>
-
-<h3>AirPods Pro</h3>
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-<div class="price">
-
-11,900,000 تومان
-
-</div>
-
-<div class="product-buttons">
-
-<a href="product.html" class="btn-small">
-
-مشاهده
-
-</a>
-
-<button class="btn-cart">
-
-🛒
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Product 6 -->
-
-<div class="product-card">
-
-<img
-src="assets/products/watch.webp"
-alt="Smart Watch"
-loading="lazy">
-
-<div class="product-info">
-
-<span class="brand">Apple</span>
-
-<h3>Apple Watch</h3>
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-<div class="price">
-
-24,900,000 تومان
-
-</div>
-
-<div class="product-buttons">
-
-<a href="product.html" class="btn-small">
-
-مشاهده
-
-</a>
-
-<button class="btn-cart">
-
-🛒
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================
-PAGINATION
-===================================== -->
-
-<section class="pagination-section">
-
-<div class="container">
-
-<div class="pagination">
-
-<a href="#" class="active">1</a>
-
-<a href="#">2</a>
-
-<a href="#">3</a>
-
-<a href="#">4</a>
-
-<a href="#">بعدی →</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<div class="container">
-
-<div class="cta-box">
-
-<h2>
-
-محصول مورد نظرت را پیدا نکردی؟
-
-</h2>
-
-<p>
-
-برای مشاهده محصولات بیشتر یا دریافت مشاوره خرید با ما در ارتباط باش.
-
-</p>
-
-<div class="cta-buttons">
 
 <a
+href="product.html?id=21"
+class="btn-product">
 
-href="contact.html"
-
-class="btn">
-
-تماس با ما
+مشاهده محصول
 
 </a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="22"
+
+data-category="charger"
+
+data-price="990000">
+
+<img
+src="assets/products/charger20w.webp"
+alt="20W Charger">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>شارژر 20 وات</h3>
+
+<p>Fast Charger</p>
+
+<div class="product-price">
+<span class="price">
+990,000 تومان
+</span>
+</div>
 
 <a
+href="product.html?id=22"
+class="btn-product">
 
-href="https://wa.me/989032487485"
-
-target="_blank"
-
-class="btn-outline">
-
-واتساپ
+مشاهده محصول
 
 </a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="23"
+
+data-category="charger"
+
+data-price="390000">
+
+<img
+src="assets/products/typec.webp"
+alt="Type C Cable">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>کابل Type-C</h3>
+
+<p>Fast Charge</p>
+
+<div class="product-price">
+<span class="price">
+390,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=23"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="24"
+
+data-category="charger"
+
+data-price="450000">
+
+<img
+src="assets/products/lightning.webp"
+alt="Lightning Cable">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>کابل Lightning</h3>
+
+<p>Apple</p>
+
+<div class="product-price">
+<span class="price">
+450,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=24"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="product-card"
+
+data-id="25"
+
+data-category="charger"
+
+data-price="590000">
+
+<img
+src="assets/products/cable100w.webp"
+alt="100W Cable">
+
+<div class="favorite">
+<i class="fa-solid fa-heart"></i>
+</div>
+
+<div class="product-info">
+
+<h3>کابل 100 وات</h3>
+
+<p>PD Fast Charge</p>
+
+<div class="product-price">
+<span class="price">
+590,000 تومان
+</span>
+</div>
+
+<a
+href="product.html?id=25"
+class="btn-product">
+
+مشاهده محصول
+
+</a>
+
+</div>
 
 </div>
 
@@ -582,15 +1373,19 @@ class="btn-outline">
 
 </section>
 
-<!-- =====================================
+
+
+<!-- =========================
 FOOTER
-===================================== -->
+========================= -->
 
 <footer class="footer">
 
 <div class="container">
 
 <div class="footer-grid">
+
+
 
 <div>
 
@@ -604,53 +1399,99 @@ FOOTER
 
 </div>
 
+
+
 <div>
 
-<h4>دسترسی سریع</h4>
+<h4>
+
+دسترسی سریع
+
+</h4>
 
 <ul>
 
-<li><a href="index.html">خانه</a></li>
+<li>
 
-<li><a href="products.html">محصولات</a></li>
+<a href="index.html">
 
-<li><a href="about.html">درباره ما</a></li>
+خانه
 
-<li><a href="contact.html">تماس با ما</a></li>
+</a>
+
+</li>
+
+<li>
+
+<a href="products.html">
+
+محصولات
+
+</a>
+
+</li>
+
+<li>
+
+<a href="about.html">
+
+درباره ما
+
+</a>
+
+</li>
+
+<li>
+
+<a href="contact.html">
+
+تماس با ما
+
+</a>
+
+</li>
 
 </ul>
 
 </div>
 
+
+
 <div>
 
-<h4>ارتباط با ما</h4>
+<h4>
 
-<ul>
+ارتباط با ما
 
-<li>📞 09032487485</li>
+</h4>
 
-<li>🌐 sabzabistore.ir</li>
+<p>
 
-<li>📷 @sabzabistore</li>
+Instagram :
 
-<li>📍 اصفهان</li>
+@SabzAbiStore
 
-</ul>
+</p>
+
+<p>
+
+SabzAbiStore.ir
+
+</p>
 
 </div>
 
+
+
 </div>
 
-<hr>
+
 
 <div class="footer-bottom">
 
 <p>
 
 © 2026 SabzAbi Store
-
-تمام حقوق محفوظ است.
 
 </p>
 
@@ -660,8 +1501,11 @@ FOOTER
 
 </footer>
 
+
+
 <script src="assets/js/app.js"></script>
 
 </body>
 
 </html>
+
