@@ -1,47 +1,69 @@
 /* ======================================
    SabzAbi Store
-   product.js
+   Product.js
 ====================================== */
 
 "use strict";
 
-/* ==============================
-   Get Product ID
-============================== */
+/* گرفتن id از آدرس */
 
 const params = new URLSearchParams(window.location.search);
 
 const productId = Number(params.get("id"));
 
-/* ==============================
-   Find Product
-============================== */
+/* پیدا کردن محصول */
 
 const product = PRODUCTS.find(item => item.id === productId);
 
-/* ==============================
-   Product Not Found
-============================== */
+/* اگر محصول نبود */
 
 if (!product) {
 
     document.body.innerHTML = `
-
         <div style="
             display:flex;
             justify-content:center;
             align-items:center;
             height:100vh;
-            font-size:24px;
-            font-family:IRANSans;
+            font-size:28px;
+            font-family:Vazirmatn;
         ">
-
-            محصول پیدا نشد.
-
+            محصول پیدا نشد
         </div>
-
     `;
 
     throw new Error("Product Not Found");
 
 }
+
+/* ==============================
+   انتخاب المنت‌های صفحه
+============================== */
+
+const title = document.querySelector(".product-title");
+
+const brand = document.querySelector(".product-brand");
+
+const image = document.querySelector("#mainProductImage");
+
+const newPrice = document.querySelector(".new-price");
+
+const description = document.querySelector(".short-description");
+
+/* ==============================
+   نمایش اطلاعات محصول
+============================== */
+
+document.title = product.name + " | SabzAbi Store";
+
+title.textContent = product.name;
+
+brand.textContent = product.brand;
+
+image.src = product.image;
+
+image.alt = product.name;
+
+newPrice.textContent = product.price + " تومان";
+
+description.textContent = product.description;
