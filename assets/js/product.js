@@ -67,3 +67,28 @@ image.alt = product.name;
 newPrice.textContent = product.price + " تومان";
 
 description.textContent = product.description;
+
+/* ==============================
+   Product Specifications
+============================== */
+
+const specTable = document.querySelector(".spec-table");
+
+if (specTable && product.specs) {
+
+    specTable.innerHTML = "";
+
+    Object.entries(product.specs).forEach(([key, value]) => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <th>${key}</th>
+            <td>${value}</td>
+        `;
+
+        specTable.appendChild(row);
+
+    });
+
+}
