@@ -69,26 +69,13 @@ newPrice.textContent = product.price + " تومان";
 description.textContent = product.description;
 
 /* ==============================
-   Product Specifications
+   Long Description
 ============================== */
 
-const specTable = document.querySelector(".spec-table");
+const descriptionTab = document.querySelector("#description p");
 
-if (specTable && product.specs) {
+if (descriptionTab) {
 
-    specTable.innerHTML = "";
-
-    Object.entries(product.specs).forEach(([key, value]) => {
-
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-            <th>${key}</th>
-            <td>${value}</td>
-        `;
-
-        specTable.appendChild(row);
-
-    });
+    descriptionTab.textContent = product.description;
 
 }
