@@ -846,3 +846,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+/* ==========================================
+   Featured Products (Index)
+========================================== */
+
+const featuredContainer = document.querySelector("#featuredProducts");
+
+if (featuredContainer) {
+
+    const featuredProducts = PRODUCTS.slice(0, 4);
+
+    featuredContainer.innerHTML = "";
+
+    featuredProducts.forEach(product => {
+
+        featuredContainer.innerHTML += `
+
+        <div class="product-card">
+
+            <span class="product-badge">ویژه</span>
+
+            <button class="wishlist">❤</button>
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+                loading="lazy">
+
+            <div class="product-info">
+
+                <div class="rating">
+
+                    ★★★★★
+
+                </div>
+
+                <h3>${product.name}</h3>
+
+                <p>
+
+                    ${product.description}
+
+                </p>
+
+                <div class="price">
+
+                    <span class="price-title">
+
+                        شروع از
+
+                    </span>
+
+                    <span>
+
+                        ${product.price} تومان
+
+                    </span>
+
+                </div>
+
+                <a href="product.html?id=${product.id}" class="btn-product">
+
+                    مشاهده محصول
+
+                </a>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
