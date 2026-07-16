@@ -1,37 +1,23 @@
+"use strict";
+
 /* ==========================================
    PRODUCTS PAGE
 ========================================== */
 
-let filteredProducts = [...PRODUCTS];
+const productsContainer = document.getElementById("productsContainer");
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const sortProducts = document.getElementById("sortProducts");
 
-const productsContainer = document.querySelector("#productsContainer");
-const searchInput = document.querySelector("#searchInput");
-const categoryFilter = document.querySelector("#categoryFilter");
-const sortProducts = document.querySelector("#sortProducts");
+let currentProducts = [...PRODUCTS];
 
-/* ==========================================
-   Render Products
-========================================== */
-
-function renderProducts(products) {
+function renderProducts(list) {
 
     if (!productsContainer) return;
 
     productsContainer.innerHTML = "";
 
-    if (products.length === 0) {
-
-        productsContainer.innerHTML = `
-            <div class="empty-products">
-                <h3>محصولی پیدا نشد</h3>
-            </div>
-        `;
-
-        return;
-
-    }
-
-    products.forEach(product => {
+    list.forEach(product => {
 
         productsContainer.innerHTML += `
 
@@ -63,7 +49,7 @@ function renderProducts(products) {
                     </span>
 
                     <span>
-                        ${product.price} تومان
+                        ${Number(product.price).toLocaleString("fa-IR")} تومان
                     </span>
 
                 </div>
@@ -84,105 +70,97 @@ function renderProducts(products) {
 
 }
 
-renderProducts(filteredProducts);
+renderProducts(currentProducts);
 
 /* ==========================================
-   Search
+   FILTER
+========================================== */
+
+function updateProducts() {
+
+    let result = [...PRODUCTS];
+
+    /* ---------- Search ---------- */
+
+    if (searchInput && searchInput.value.trim() !== "") {
+
+        const keyword = searchInput.value
+            .trim()
+            .toLowerCase();
+
+        result = result.filter(product =>
+
+            product.name
+                .toLowerCase()
+                .includes(keyword)
+
+        );
+
+    }
+
+    /* ---------- Category ---------- */
+
+    if (categoryFilter && categoryFilter.value !== "all") {
+
+        result = result.filter(product =>
+
+            product.category === categoryFilter.value
+
+        );
+
+    }
+
+    /* ---------- Sort ---------- */
+
+    if (sortProducts) {
+
+        switch (sortProducts.value) {
+
+            case "cheap":
+
+                result.sort((a, b) => a.price - b.price);
+
+                break;
+
+            case "expensive":
+
+                result.sort((a, b) => b.price - a.price);
+
+                break;
+
+            case "new":
+
+                result.sort((a, b) => b.id - a.id);
+
+                break;
+
+        }
+
+    }
+
+    renderProducts(result);
+
+}
+
+/* ==========================================
+   Events
 ========================================== */
 
 if (searchInput) {
 
-    searchInput.addEventListener("input", () => {
-
-        filterProducts();
-
-    });
+    searchInput.addEventListener("input", updateProducts);
 
 }
-
-/* ==========================================
-   Category Filter
-========================================== */
 
 if (categoryFilter) {
 
-    categoryFilter.addEventListener("change", () => {
-
-        filterProducts();
-
-    });
+    categoryFilter.addEventListener("change", updateProducts);
 
 }
-
-/* ==========================================
-   Sort
-========================================== */
 
 if (sortProducts) {
 
-    sortProducts.addEventListener("change", () => {
-
-        filterProducts();
-
-    });
+    sortProducts.addEventListener("change", updateProducts);
 
 }
-
-/* ==========================================
-   Main Filter Function
-========================================== */
-
-function filterProducts() {
-
-    const keyword = searchInput ? searchInput.value.trim().toLowerCase() : "";
-
-    const category = categoryFilter ? categoryFilter.value : "all";
-
-    const sort = sortProducts ? sortProducts.value : "default";
-
-    filteredProducts = PRODUCTS.filter(product => {
-
-        const matchKeyword =
-            product.name.toLowerCase().includes(keyword);
-
-        const matchCategory =
-            category === "all" ||
-            product.category === category;
-
-        return matchKeyword && matchCategory;
-
-    });
-
-    switch (sort) {
-
-        case "cheap":
-
-            filteredProducts.sort((a, b) => a.price - b.price);
-
-            break;
-
-        case "expensive":
-
-            filteredProducts.sort((a, b) => b.price - a.price);
-
-            break;
-
-        case "new":
-
-            filteredProducts.sort((a, b) => b.id - a.id);
-
-            break;
-
-        default:
-
-            filteredProducts.sort((a, b) => a.id - b.id);
-
-            break;
-
-    }
-
-    renderProducts(filteredProducts);
-
-}
-
 
