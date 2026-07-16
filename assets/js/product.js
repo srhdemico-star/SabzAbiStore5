@@ -78,6 +78,9 @@ if (breadcrumbProduct) {
 
     breadcrumbProduct.textContent = product.name;
 
+   breadcrumbProduct.style.color = "red";
+breadcrumbProduct.style.fontWeight = "900";
+
 }
 
 /* ==============================
