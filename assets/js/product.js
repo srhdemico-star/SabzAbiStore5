@@ -69,6 +69,18 @@ newPrice.textContent = product.price + " تومان";
 description.textContent = product.description;
 
 /* ==============================
+   Breadcrumb
+============================== */
+
+const breadcrumbProduct = document.querySelector("#breadcrumbProduct");
+
+if (breadcrumbProduct) {
+
+    breadcrumbProduct.textContent = product.name;
+
+}
+
+/* ==============================
    Long Description
 ============================== */
 
