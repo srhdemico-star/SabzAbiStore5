@@ -81,17 +81,6 @@ if (breadcrumbProduct) {
 
 }
 
-/* ==============================
-   Long Description
-============================== */
-
-const descriptionTab = document.querySelector("#description p");
-
-if (descriptionTab) {
-
-    descriptionTab.textContent = product.description;
-
-}
 
 /* ==============================
    Related Products
