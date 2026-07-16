@@ -92,3 +92,43 @@ if (descriptionTab) {
     descriptionTab.textContent = product.description;
 
 }
+
+/* ==============================
+   Related Products
+============================== */
+
+const relatedContainer = document.querySelector("#relatedProducts");
+
+if (relatedContainer) {
+
+    const relatedProducts = PRODUCTS
+        .filter(item => item.category === product.category && item.id !== product.id)
+        .slice(0, 4);
+
+    relatedContainer.innerHTML = "";
+
+    relatedProducts.forEach(item => {
+
+        relatedContainer.innerHTML += `
+
+        <div class="product-card">
+
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+
+            <h3>${item.name}</h3>
+
+            <p class="price">${item.price} تومان</p>
+
+            <a href="product.html?id=${item.id}" class="btn-small">
+
+                مشاهده محصول
+
+            </a>
+
+        </div>
+
+        `;
+
+    });
+
+}
