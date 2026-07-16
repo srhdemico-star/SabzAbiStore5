@@ -49,7 +49,7 @@ function renderProducts(list) {
                     </span>
 
                     <span>
-                        ${Number(product.price).toLocaleString("fa-IR")} تومان
+                        ${product.price} تومان
                     </span>
 
                 </div>
