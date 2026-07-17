@@ -229,5 +229,20 @@ if (sortProducts) {
    FIRST LOAD
 ========================================== */
 
-renderProducts(PRODUCTS);
+/* ==========================================
+   FIRST LOAD
+========================================== */
+
+const params = new URLSearchParams(window.location.search);
+
+const selectedCategory = params.get("category");
+
+if (selectedCategory && categoryFilter) {
+
+    categoryFilter.value = selectedCategory;
+
+}
+
+updateProducts();
+
 
