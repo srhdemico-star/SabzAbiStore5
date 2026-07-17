@@ -66,7 +66,7 @@ const PRODUCTS = [{
     category: "mobile",
     name: "Xiaomi 15",
     image: "assets/products/xiaomi15.webp",
-    price: "46,900,000",
+    price: "53,900,000",
     brand: "Xiaomi",
 
     description:
