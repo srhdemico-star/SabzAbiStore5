@@ -1,7 +1,8 @@
 "use strict";
 
 /* ==========================================
-   PRODUCTS PAGE
+   SabzAbi Store
+   products-page.js FINAL
 ========================================== */
 
 const productsContainer = document.getElementById("productsContainer");
@@ -9,7 +10,57 @@ const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
 const sortProducts = document.getElementById("sortProducts");
 
-let currentProducts = [...PRODUCTS];
+function createCard(product) {
+
+    return `
+    <div class="product-card">
+
+        <span class="product-badge">ویژه</span>
+
+        <button class="wishlist">❤</button>
+
+        <img
+            src="${product.image}"
+            alt="${product.name}"
+            loading="lazy">
+
+        <div class="product-info">
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+            <h3>${product.name}</h3>
+
+            <p>${product.description}</p>
+
+            <div class="price">
+
+                <span class="price-title">
+
+                    شروع از
+
+                </span>
+
+                <span>
+
+                    ${product.price} تومان
+
+                </span>
+
+            </div>
+
+            <a href="product.html?id=${product.id}" class="btn-product">
+
+                مشاهده محصول
+
+            </a>
+
+        </div>
+
+    </div>
+    `;
+}
 
 function renderProducts(list) {
 
@@ -17,68 +68,37 @@ function renderProducts(list) {
 
     productsContainer.innerHTML = "";
 
-    list.forEach(product => {
+    if (list.length === 0) {
 
-        productsContainer.innerHTML += `
+        productsContainer.innerHTML = `
 
-        <div class="product-card">
+        <div class="empty-products">
 
-            <span class="product-badge">ویژه</span>
-
-            <button class="wishlist">❤</button>
-
-            <img
-                src="${product.image}"
-                alt="${product.name}"
-                loading="lazy">
-
-            <div class="product-info">
-
-                <div class="rating">
-                    ★★★★★
-                </div>
-
-                <h3>${product.name}</h3>
-
-                <p>${product.description}</p>
-
-                <div class="price">
-
-                    <span class="price-title">
-                        شروع از
-                    </span>
-
-                    <span>
-                        ${product.price} تومان
-                    </span>
-
-                </div>
-
-                <a href="product.html?id=${product.id}" class="btn-product">
-
-                    مشاهده محصول
-
-                </a>
-
-            </div>
+            محصولی پیدا نشد.
 
         </div>
 
         `;
 
+        return;
+
+    }
+
+    list.forEach(product => {
+
+        productsContainer.innerHTML += createCard(product);
+
     });
 
 }
 
-renderProducts(currentProducts);
-
 /* ==========================================
-   FILTER
+   FILTER + SEARCH + SORT
 ========================================== */
 
 function updateProducts() {
 
-    let result = [...PRODUCTS];
+    let filtered = [...PRODUCTS];
 
     /* ---------- Search ---------- */
 
@@ -88,7 +108,7 @@ function updateProducts() {
             .trim()
             .toLowerCase();
 
-        result = result.filter(product =>
+        filtered = filtered.filter(product =>
 
             product.name
                 .toLowerCase()
@@ -100,11 +120,15 @@ function updateProducts() {
 
     /* ---------- Category ---------- */
 
-    if (categoryFilter && categoryFilter.value !== "all") {
+    if (
+        categoryFilter &&
+        categoryFilter.value !== "all"
+    ) {
 
-        result = result.filter(product =>
+        filtered = filtered.filter(product =>
 
-            product.category === categoryFilter.value
+            String(product.category).trim() ===
+            String(categoryFilter.value).trim()
 
         );
 
@@ -118,19 +142,47 @@ function updateProducts() {
 
             case "cheap":
 
-                result.sort((a, b) => a.price - b.price);
+                filtered.sort((a, b) =>
+
+                    parseInt(
+                        String(a.price).replace(/,/g, "")
+                    )
+
+                    -
+
+                    parseInt(
+                        String(b.price).replace(/,/g, "")
+                    )
+
+                );
 
                 break;
 
             case "expensive":
 
-                result.sort((a, b) => b.price - a.price);
+                filtered.sort((a, b) =>
+
+                    parseInt(
+                        String(b.price).replace(/,/g, "")
+                    )
+
+                    -
+
+                    parseInt(
+                        String(a.price).replace(/,/g, "")
+                    )
+
+                );
 
                 break;
 
             case "new":
 
-                result.sort((a, b) => b.id - a.id);
+                filtered.sort((a, b) =>
+
+                    Number(b.id) - Number(a.id)
+
+                );
 
                 break;
 
@@ -138,29 +190,44 @@ function updateProducts() {
 
     }
 
-    renderProducts(result);
+    renderProducts(filtered);
 
 }
 
 /* ==========================================
-   Events
+   EVENTS
 ========================================== */
 
 if (searchInput) {
 
-    searchInput.addEventListener("input", updateProducts);
+    searchInput.addEventListener(
+        "input",
+        updateProducts
+    );
 
 }
 
 if (categoryFilter) {
 
-    categoryFilter.addEventListener("change", updateProducts);
+    categoryFilter.addEventListener(
+        "change",
+        updateProducts
+    );
 
 }
 
 if (sortProducts) {
 
-    sortProducts.addEventListener("change", updateProducts);
+    sortProducts.addEventListener(
+        "change",
+        updateProducts
+    );
 
 }
+
+/* ==========================================
+   FIRST LOAD
+========================================== */
+
+renderProducts(PRODUCTS);
 
