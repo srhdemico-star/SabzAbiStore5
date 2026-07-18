@@ -3,7 +3,7 @@ const PRODUCTS = [{
     category: "mobile",
     name: "iPhone 16 Pro Max",
     image: "assets/products/iphone16.webp",
-    price: "89,900,000",
+    price: "351,900,000",
     brand: "Apple",
 
     description:
@@ -22,9 +22,9 @@ const PRODUCTS = [{
 {
     id: 2,
     category: "mobile",
-    name: "iPhone 15 Pro Max",
+    name: "iPhone 15 ",
     image: "assets/products/iphone15.webp",
-    price: "74,900,000",
+    price: "210,500,000",
     brand: "Apple",
 
     description:
@@ -45,7 +45,7 @@ const PRODUCTS = [{
     category: "mobile",
     name: "Samsung Galaxy S25 Ultra",
     image: "assets/products/s25ultra.webp",
-    price: "82,900,000",
+    price: "265,000,000",
     brand: "Samsung",
 
     description:
@@ -66,7 +66,7 @@ const PRODUCTS = [{
     category: "mobile",
     name: "Xiaomi 15",
     image: "assets/products/xiaomi15.webp",
-    price: "53,900,000",
+    price: "185,200,000",
     brand: "Xiaomi",
 
     description:
@@ -87,7 +87,7 @@ const PRODUCTS = [{
     category: "mobile",
     name: "POCO F7",
     image: "assets/products/pocof7.webp",
-    price: "27,900,000",
+    price: "134,300,000",
     brand: "POCO",
 
     description:
@@ -108,7 +108,7 @@ const PRODUCTS = [{
     category: "earbuds",
     name: "AirPods Pro 2",
     image: "assets/products/airpodspro2.webp",
-    price: "13,900,000",
+    price: "49,900,000",
     brand: "Apple",
 
     description:
@@ -128,7 +128,7 @@ const PRODUCTS = [{
     category: "earbuds",
     name: "Galaxy Buds 3",
     image: "assets/products/galaxybuds3.webp",
-    price: "7,900,000",
+    price: "19,000,000",
     brand: "Samsung",
 
     description:
@@ -148,7 +148,7 @@ const PRODUCTS = [{
     category: "earbuds",
     name: "QCY T13",
     image: "assets/products/qcyt13.webp",
-    price: "1,490,000",
+    price: "2,490,000",
     brand: "QCY",
 
     description:
@@ -168,7 +168,7 @@ const PRODUCTS = [{
     category: "earbuds",
     name: "JBL Tune",
     image: "assets/products/jbltune.webp",
-    price: "2,990,000",
+    price: "8,990,000",
     brand: "JBL",
 
     description:
@@ -188,7 +188,7 @@ const PRODUCTS = [{
     category: "earbuds",
     name: "Haylou X1",
     image: "assets/products/hayloux1.webp",
-    price: "1,890,000",
+    price: "4,890,000",
     brand: "Haylou",
 
     description:
@@ -208,7 +208,7 @@ const PRODUCTS = [{
     category: "watch",
     name: "Apple Watch Series",
     image: "assets/products/applewatch.webp",
-    price: "24,900,000",
+    price: "74,000,000",
     brand: "Apple",
 
     description:
@@ -228,7 +228,7 @@ const PRODUCTS = [{
     category: "watch",
     name: "Galaxy Watch",
     image: "assets/products/galaxywatch.webp",
-    price: "15,900,000",
+    price: "43,900,000",
     brand: "Samsung",
 
     description:
@@ -248,7 +248,7 @@ const PRODUCTS = [{
     category: "watch",
     name: "Xiaomi Watch",
     image: "assets/products/xiaomiwatch.webp",
-    price: "8,900,000",
+    price: "19,600,000",
     brand: "Xiaomi",
 
     description:
@@ -268,7 +268,7 @@ const PRODUCTS = [{
     category: "watch",
     name: "Amazfit GTR",
     image: "assets/products/amazfit.webp",
-    price: "9,900,000",
+    price: "16,700,000",
     brand: "Amazfit",
 
     description:
@@ -288,7 +288,7 @@ const PRODUCTS = [{
     category: "watch",
     name: "Haylou Watch",
     image: "assets/products/haylouwatch.webp",
-    price: "3,290,000",
+    price: "7,290,000",
     brand: "Haylou",
 
     description:
@@ -328,7 +328,7 @@ const PRODUCTS = [{
     category: "powerbank",
     name: "Baseus 20000",
     image: "assets/products/baseus20000.webp",
-    price: "3,990,000",
+    price: "5,990,000",
     brand: "Baseus",
 
     description:
@@ -368,7 +368,7 @@ const PRODUCTS = [{
     category: "powerbank",
     name: "Green Lion 20000",
     image: "assets/products/greenlion20000.webp",
-    price: "3,790,000",
+    price: "6,790,000",
     brand: "Green Lion",
 
     description:
@@ -388,7 +388,7 @@ const PRODUCTS = [{
     category: "powerbank",
     name: "Mcdodo 20000",
     image: "assets/products/mcdodo20000.webp",
-    price: "3,490,000",
+    price: "8,490,000",
     brand: "Mcdodo",
 
     description:
@@ -408,7 +408,7 @@ const PRODUCTS = [{
     category: "charger",
     name: "45W Fast Charger",
     image: "assets/products/charger45w.webp",
-    price: "1,490,000",
+    price: "7,490,000",
     brand: "Samsung",
 
     description:
@@ -428,7 +428,7 @@ const PRODUCTS = [{
     category: "charger",
     name: "20W Fast Charger",
     image: "assets/products/charger20w.webp",
-    price: "890,000",
+    price: "4,490,000",
     brand: "Apple",
 
     description:
@@ -448,7 +448,7 @@ const PRODUCTS = [{
     category: "charger",
     name: "Type-C Cable 100W",
     image: "assets/products/typec.webp",
-    price: "490,000",
+    price: "990,000",
     brand: "Baseus",
 
     description:
@@ -468,7 +468,7 @@ const PRODUCTS = [{
     category: "charger",
     name: "Lightning Cable",
     image: "assets/products/lightning.webp",
-    price: "590,000",
+    price: "2,490,000",
     brand: "Apple",
 
     description:
@@ -488,7 +488,7 @@ const PRODUCTS = [{
     category: "charger",
     name: "100W Fast Charging Cable",
     image: "assets/products/cable100w.webp",
-    price: "690,000",
+    price: "1,250,000",
     brand: "Mcdodo",
 
     description:
