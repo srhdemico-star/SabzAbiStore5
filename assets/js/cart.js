@@ -17,7 +17,7 @@ function addToCart(product) {
     } else {
         cart.push({
             ...product,
-            qty:1
+            quantity:1
         });
     }
 
@@ -74,7 +74,7 @@ function showCart(){
             <h3>${item.name}</h3>
 
             <p>
-            ${item.price.toLocaleString()} تومان
+            ${Number(item.price).toLocaleString("fa-IR")} تومان
             </p>
 
             <input 
