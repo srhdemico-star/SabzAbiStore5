@@ -275,7 +275,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showCart();
 
+
 });
+
 
 /* ======================================
    Checkout WhatsApp
