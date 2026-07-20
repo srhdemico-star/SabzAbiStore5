@@ -238,6 +238,21 @@ function decreaseQty(index) {
    Remove Item
 ====================================== */
 
+function removeItem(index){
+
+    if(!confirm("این محصول حذف شود؟")) return;
+
+    cart.splice(index,1);
+
+    saveCart();
+
+    updateCartCount();
+
+    showCart();
+
+    showToast("🗑 محصول حذف شد");
+
+}
 
 
 /* ======================================
@@ -299,6 +314,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
+
+   const clearBtn = document.querySelector("#clearCartBtn");
+
+if(clearBtn){
+
+    clearBtn.addEventListener("click",()=>{
+
+        if(!confirm("سبد خرید خالی شود؟")) return;
+
+        localStorage.removeItem("cart");
+
+        cart = [];
+
+        updateCartCount();
+
+        showCart();
+
+        showToast("🗑 سبد خرید خالی شد");
+
+    });
+
+}
+
 
 });
 
