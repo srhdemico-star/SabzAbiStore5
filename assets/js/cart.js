@@ -1,116 +1,182 @@
+"use strict";
+
+/* ======================================
+   SabzAbi Store
+   cart.js FINAL
+====================================== */
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+/* ======================================
+   Save Cart
+====================================== */
 
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+/* ======================================
+   Cart Counter
+====================================== */
 
-// اضافه کردن محصول
+function updateCartCount() {
+
+    const counter = document.querySelector("#cartCount");
+
+    if (!counter) return;
+
+    const total = cart.reduce((sum, item) => {
+
+        return sum + item.quantity;
+
+    }, 0);
+
+    counter.innerText = total;
+}
+
+/* ======================================
+   Add To Cart
+====================================== */
+
 function addToCart(product) {
 
-    let item = cart.find(
-        p => p.id === product.id
-    );
+    const existingItem = cart.find(item => item.id === product.id);
 
-    if(item){
-        item.quantity++
+    if (existingItem) {
+
+        existingItem.quantity++;
+
     } else {
+
         cart.push({
-            ...product,
-            quantity:1
+
+            id: product.id,
+
+            name: product.name,
+
+            image: product.image,
+
+            price: product.price,
+
+            quantity: 1
+
         });
+
     }
 
     saveCart();
 
-    alert("محصول به سبد خرید اضافه شد");
     updateCartCount();
+
+    showCart();
+
 }
 
+/* ======================================
+   Show Cart
+====================================== */
 
-// تعداد سبد خرید
-function updateCartCount(){
+function showCart() {
 
-    let count = cart.reduce(
-        (sum,item)=> sum + item.quantity,
-        0
-    );
+    const container = document.querySelector("#cartItems");
 
-    let cartCount = document.querySelector("#cartCount");
-    if(cartCount){
-        cartCount.innerText = count;
-    }
-}
+    const totalBox = document.querySelector("#cartTotal");
 
+    if (!container) return;
 
-// نمایش سبد خرید
-function showCart(){
+    if (cart.length === 0) {
 
-    let box = document.querySelector("#cartItems");
+        container.innerHTML = `
 
-    if(!box) return;
+        <div class="empty-cart">
 
+            <h2>سبد خرید شما خالی است</h2>
 
-    if(cart.length === 0){
+            <a href="products.html" class="btn">
 
-        box.innerHTML =
-        "<p>سبد خرید شما خالی است</p>";
+                مشاهده محصولات
+
+            </a>
+
+        </div>
+
+        `;
+
+        if (totalBox)
+
+            totalBox.innerText = "0 تومان";
 
         return;
+
     }
 
+    container.innerHTML = "";
 
-    box.innerHTML = "";
+    let total = 0;
 
+    cart.forEach((item, index) => {
 
-    cart.forEach((item,index)=>{
+        const price = Number(
 
-        box.innerHTML += `
+            item.price.toString().replace(/,/g, "")
+
+        );
+
+        total += price * item.quantity;
+
+        container.innerHTML += `
 
         <div class="cart-item">
 
-            <img src="${item.image}">
+            <img src="${item.image}" alt="${item.name}">
 
-            <h3>${item.name}</h3>
+            <div class="cart-info">
 
-            <p>
-            ${Number(item.price).toLocaleString("fa-IR")} تومان
-            </p>
+                <h3>${item.name}</h3>
+
+                <p>${item.price} تومان</p>
+
+            </div>
 
             <div class="cart-actions">
 
-    <button
-        class="qty-btn"
-        onclick="decreaseQty(${index})">
+                <button
 
-        −
+                    class="qty-btn"
 
-    </button>
+                    onclick="decreaseQty(${index})">
 
-    <span class="qty-number">
+                    −
 
-        ${item.quantity}
+                </button>
 
-    </span>
+                <span class="qty-number">
 
-    <button
-        class="qty-btn"
-        onclick="increaseQty(${index})">
+                    ${item.quantity}
 
-        +
+                </span>
 
-    </button>
+                <button
 
-    <button
-        class="remove-btn"
-        onclick="removeItem(${index})">
+                    class="qty-btn"
 
-        🗑 حذف
+                    onclick="increaseQty(${index})">
 
-    </button>
+                    +
 
-</div>
+                </button>
 
+                <button
+
+                    class="remove-btn"
+
+                    onclick="removeItem(${index})">
+
+                    🗑 حذف
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -118,11 +184,21 @@ function showCart(){
 
     });
 
+    if (totalBox) {
+
+        totalBox.innerText =
+
+            total.toLocaleString("fa-IR") + " تومان";
+
+    }
+
 }
 
+/* ======================================
+   Increase Qty
+====================================== */
 
-// تغییر تعداد
-function increaseQty(index){
+function increaseQty(index) {
 
     cart[index].quantity++;
 
@@ -134,15 +210,19 @@ function increaseQty(index){
 
 }
 
-function decreaseQty(index){
+/* ======================================
+   Decrease Qty
+====================================== */
 
-    if(cart[index].quantity > 1){
+function decreaseQty(index) {
+
+    if (cart[index].quantity > 1) {
 
         cart[index].quantity--;
 
-    }else{
+    } else {
 
-        cart.splice(index,1);
+        cart.splice(index, 1);
 
     }
 
@@ -154,12 +234,13 @@ function decreaseQty(index){
 
 }
 
+/* ======================================
+   Remove Item
+====================================== */
 
+function removeItem(index) {
 
-// حذف محصول
-function removeItem(index){
-
-    cart.splice(index,1);
+    cart.splice(index, 1);
 
     saveCart();
 
@@ -169,14 +250,14 @@ function removeItem(index){
 
 }
 
+/* ======================================
+   Init
+====================================== */
 
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
+    updateCartCount();
 
-updateCartCount();
-
-showCart();
+    showCart();
 
 });
