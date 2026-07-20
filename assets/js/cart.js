@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             `جمع کل:%0A${total.toLocaleString("fa-IR")} تومان`;
 
-            const phone = "989134604978";
+            const phone = "989032487485";
 
             window.open(
 
