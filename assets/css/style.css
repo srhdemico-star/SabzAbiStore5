@@ -2450,5 +2450,19 @@ a{
 
 }
 
+.btn-danger{
+
+background:#e53935;
+
+color:#fff;
+
+}
+
+.btn-danger:hover{
+
+background:#c62828;
+
+}
+
 
 	
