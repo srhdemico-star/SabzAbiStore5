@@ -215,19 +215,30 @@ if (addToCartBtn) {
 
             price: product.price,
 
-            color: selectedColor || product.color,
-
-            storage: selectedStorage || "512GB",
 
             quantity: parseInt(quantityInput.value, 10)
 
         };
 
-        const existingItem = cart.find(item =>
-            item.id === cartItem.id &&
-            item.color === cartItem.color &&
-            item.storage === cartItem.storage
-        );
+      const existingItem = cart.find(item => item.id === cartItem.id);
+
+if (existingItem) {
+
+    existingItem.quantity += cartItem.quantity;
+
+} else {
+
+    cart.push(cartItem);
+
+}
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+showToast("✅ محصول به سبد خرید اضافه شد.");
+
+console.log(cart);
+
+       
 
         if (existingItem) {
 
