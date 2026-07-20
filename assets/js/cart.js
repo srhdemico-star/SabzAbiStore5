@@ -261,3 +261,56 @@ document.addEventListener("DOMContentLoaded", () => {
     showCart();
 
 });
+
+/* ======================================
+   Checkout WhatsApp
+====================================== */
+
+const checkoutBtn = document.querySelector("#checkoutBtn");
+
+if (checkoutBtn) {
+
+    checkoutBtn.addEventListener("click", () => {
+
+        if (cart.length === 0) {
+
+            alert("سبد خرید خالی است.");
+
+            return;
+
+        }
+
+        let message = "سلام، می‌خواهم این محصولات را سفارش بدهم:%0A%0A";
+
+        let total = 0;
+
+        cart.forEach(item => {
+
+            const price = Number(item.price.toString().replace(/,/g, ""));
+
+            total += price * item.quantity;
+
+            message +=
+                `• ${item.name} × ${item.quantity}%0A` +
+                `${item.price} تومان%0A%0A`;
+
+        });
+
+        message +=
+            `جمع کل:%0A${total.toLocaleString("fa-IR")} تومان`;
+
+        const phone = "989134604978";
+
+        window.open(
+
+            `https://wa.me/${phone}?text=${message}`,
+
+            "_blank"
+
+        );
+
+    });
+
+}
+
+
