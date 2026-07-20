@@ -13,7 +13,7 @@ function addToCart(product) {
     );
 
     if(item){
-        item.qty++;
+        item.quantity++
     } else {
         cart.push({
             ...product,
@@ -32,12 +32,11 @@ function addToCart(product) {
 function updateCartCount(){
 
     let count = cart.reduce(
-        (sum,item)=> sum + item.qty,
+        (sum,item)=> sum + item.quantity,
         0
     );
 
-    let cartCount = document.querySelector("#cart-count");
-
+    let cartCount = document.querySelector("#cartCount");
     if(cartCount){
         cartCount.innerText = count;
     }
@@ -47,7 +46,7 @@ function updateCartCount(){
 // نمایش سبد خرید
 function showCart(){
 
-    let box = document.querySelector("#cart-items");
+    let box = document.querySelector("#cartItems");
 
     if(!box) return;
 
@@ -80,7 +79,7 @@ function showCart(){
 
             <input 
             type="number"
-            value="${item.qty}"
+            value="${item.quantity}"
             min="1"
             onchange="changeQty(${index},this.value)"
             >
@@ -101,7 +100,7 @@ function showCart(){
 // تغییر تعداد
 function changeQty(index,value){
 
-    cart[index].qty = Number(value);
+    cart[index].quantity = Number(value);
 
     saveCart();
 
