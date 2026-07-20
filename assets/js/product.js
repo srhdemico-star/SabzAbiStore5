@@ -121,3 +121,135 @@ if (relatedContainer) {
     });
 
 }
+
+/* ======================================
+   Quantity
+====================================== */
+
+const quantityInput = document.getElementById("quantity");
+const plusBtn = document.getElementById("plus");
+const minusBtn = document.getElementById("minus");
+
+if (quantityInput && plusBtn && minusBtn) {
+
+    plusBtn.addEventListener("click", () => {
+
+        quantityInput.value = Number(quantityInput.value) + 1;
+
+    });
+
+    minusBtn.addEventListener("click", () => {
+
+        if (Number(quantityInput.value) > 1) {
+
+            quantityInput.value = Number(quantityInput.value) - 1;
+
+        }
+
+    });
+
+}
+
+
+/* ======================================
+   Quantity Controls
+====================================== */
+
+const quantityInput = document.getElementById("quantity");
+const plusBtn = document.getElementById("plus");
+const minusBtn = document.getElementById("minus");
+
+if (quantityInput && plusBtn && minusBtn) {
+
+    plusBtn.addEventListener("click", () => {
+
+        let value = parseInt(quantityInput.value, 10) || 1;
+        quantityInput.value = value + 1;
+
+    });
+
+    minusBtn.addEventListener("click", () => {
+
+        let value = parseInt(quantityInput.value, 10) || 1;
+
+        if (value > 1) {
+            quantityInput.value = value - 1;
+        }
+
+    });
+
+    quantityInput.addEventListener("change", () => {
+
+        let value = parseInt(quantityInput.value, 10);
+
+        if (isNaN(value) || value < 1) {
+            quantityInput.value = 1;
+        }
+
+    });
+
+}
+
+/* ======================================
+   Color & Storage Selection
+====================================== */
+
+const colorButtons = document.querySelectorAll(".color");
+const storageButtons = document.querySelectorAll(".storage");
+
+let selectedColor = "";
+let selectedStorage = "";
+
+/* ---------- Color ---------- */
+
+if (colorButtons.length > 0) {
+
+    colorButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            colorButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+            selectedColor = button.dataset.color;
+
+            console.log("Selected Color:", selectedColor);
+
+        });
+
+    });
+
+}
+
+/* ---------- Storage ---------- */
+
+if (storageButtons.length > 0) {
+
+    storageButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            storageButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+            selectedStorage = button.textContent.trim();
+
+            console.log("Selected Storage:", selectedStorage);
+
+        });
+
+    });
+
+}
+
+
