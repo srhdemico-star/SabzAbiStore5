@@ -66,10 +66,12 @@ function addToCart(product) {
 
     saveCart();
 
-    updateCartCount();
+updateCartCount();
 
-    showCart();
+showCart();
 
+showToast("✅ محصول به سبد خرید اضافه شد");
+   
 }
 
 /* ======================================
