@@ -134,31 +134,37 @@ if (addCartBtn) {
 
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        const cartItem = {
+        const qtyInput = document.querySelector("#quantity");
 
-            id: product.id,
+const qty = qtyInput ? Number(qtyInput.value) : 1;
 
-            name: product.name,
+const cartItem = {
 
-            price: product.price,
+    id: product.id,
 
-            image: product.image,
+    name: product.name,
 
-            quantity: 1
+    price: product.price,
 
-        };
+    image: product.image,
+
+    quantity: qty
+
+};
+       
 
         const existingItem = cart.find(item => item.id === product.id);
 
         if (existingItem) {
 
-            existingItem.quantity++;
+    existingItem.quantity += qty;
 
-        } else {
+} else {
 
-            cart.push(cartItem);
+    cart.push(cartItem);
 
-        }
+}
+       
 
         localStorage.setItem("cart", JSON.stringify(cart));
 
