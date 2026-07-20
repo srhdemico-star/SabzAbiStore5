@@ -596,6 +596,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initCounters();
 
+   updateCartCounter();
+
     const featuredContainer = document.querySelector("#featuredProducts");
 
     if (featuredContainer) {
@@ -658,7 +660,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+
 /* ==========================================
    Featured Products (Index)
 ========================================== */
+
+
+/* ======================================
+   Cart Counter
+====================================== */
+
+function updateCartCounter() {
+
+    const counter = document.querySelector("#cartCount");
+
+    if (!counter) return;
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        total += item.quantity;
+
+    });
+
+    counter.textContent = total;
+
+}
+
+
 
