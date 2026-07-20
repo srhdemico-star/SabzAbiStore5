@@ -162,6 +162,8 @@ if (addCartBtn) {
 
         localStorage.setItem("cart", JSON.stringify(cart));
 
+       updateCartCounter();
+
         showToast("✅ محصول به سبد خرید اضافه شد.");
 
     });
