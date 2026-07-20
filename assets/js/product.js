@@ -189,3 +189,123 @@ if (quantityInput && plusBtn && minusBtn) {
     });
 
 }
+
+
+/* ======================================
+   Add To Cart (LocalStorage)
+====================================== */
+
+const addToCartBtn = document.getElementById("addToCart");
+
+if (addToCartBtn) {
+
+    addToCartBtn.addEventListener("click", () => {
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const cartItem = {
+
+            id: product.id,
+
+            name: product.name,
+
+            brand: product.brand,
+
+            image: product.image,
+
+            price: product.price,
+
+            color: selectedColor || product.color,
+
+            storage: selectedStorage || "512GB",
+
+            quantity: parseInt(quantityInput.value, 10)
+
+        };
+
+        const existingItem = cart.find(item =>
+            item.id === cartItem.id &&
+            item.color === cartItem.color &&
+            item.storage === cartItem.storage
+        );
+
+        if (existingItem) {
+
+            existingItem.quantity += cartItem.quantity;
+
+        } else {
+
+            cart.push(cartItem);
+
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        showToast("✅ محصول به سبد خرید اضافه شد.");
+
+        console.log(cart);
+
+    });
+
+}
+
+/* ======================================
+   Toast
+====================================== */
+
+function showToast(message) {
+
+    const toast = document.getElementById("toast");
+
+    if (!toast) return;
+
+    toast.innerHTML = `<span>${message}</span>`;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2500);
+
+}
+
+/* ======================================
+   Buy Now
+====================================== */
+
+const buyNowBtn = document.getElementById("buyNow");
+
+if (buyNowBtn) {
+
+    buyNowBtn.addEventListener("click", () => {
+
+        let cart = [];
+
+        const item = {
+
+            id: product.id,
+
+            name: product.name,
+
+            brand: product.brand,
+
+            image: product.image,
+
+            price: product.price,
+
+            quantity: parseInt(quantityInput.value, 10)
+
+        };
+
+        cart.push(item);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        window.location.href = "cart.html";
+
+    });
+
+}
+
