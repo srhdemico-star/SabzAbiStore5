@@ -238,7 +238,22 @@ function decreaseQty(index) {
    Remove Item
 ====================================== */
 
-function removeItem(index) {
+function removeItem(index){
+
+    if(!confirm("این محصول حذف شود؟")) return;
+
+    cart.splice(index,1);
+
+    saveCart();
+
+    updateCartCount();
+
+    showCart();
+
+    showToast("🗑 محصول حذف شد");
+
+}
+
 
     cart.splice(index, 1);
 
