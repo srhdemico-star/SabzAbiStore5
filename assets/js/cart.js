@@ -77,16 +77,40 @@ function showCart(){
             ${Number(item.price).toLocaleString("fa-IR")} تومان
             </p>
 
-            <input 
-            type="number"
-            value="${item.quantity}"
-            min="1"
-            onchange="changeQty(${index},this.value)"
-            >
+            <div class="cart-actions">
 
-            <button onclick="removeItem(${index})">
-            حذف
-            </button>
+    <button
+        class="qty-btn"
+        onclick="decreaseQty(${index})">
+
+        −
+
+    </button>
+
+    <span class="qty-number">
+
+        ${item.quantity}
+
+    </span>
+
+    <button
+        class="qty-btn"
+        onclick="increaseQty(${index})">
+
+        +
+
+    </button>
+
+    <button
+        class="remove-btn"
+        onclick="removeItem(${index})">
+
+        🗑 حذف
+
+    </button>
+
+</div>
+
 
         </div>
 
@@ -98,15 +122,38 @@ function showCart(){
 
 
 // تغییر تعداد
-function changeQty(index,value){
+function increaseQty(index){
 
-    cart[index].quantity = Number(value);
+    cart[index].quantity++;
 
     saveCart();
+
+    updateCartCount();
 
     showCart();
 
 }
+
+function decreaseQty(index){
+
+    if(cart[index].quantity > 1){
+
+        cart[index].quantity--;
+
+    }else{
+
+        cart.splice(index,1);
+
+    }
+
+    saveCart();
+
+    updateCartCount();
+
+    showCart();
+
+}
+
 
 
 // حذف محصول
@@ -115,6 +162,8 @@ function removeItem(index){
     cart.splice(index,1);
 
     saveCart();
+
+    updateCartCount();
 
     showCart();
 
