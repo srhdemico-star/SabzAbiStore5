@@ -121,3 +121,49 @@ if (relatedContainer) {
     });
 
 }
+
+/* ==============================
+   Add To Cart
+============================== */
+
+const addCartBtn = document.querySelector(".add-cart");
+
+if (addCartBtn) {
+
+    addCartBtn.addEventListener("click", () => {
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const cartItem = {
+
+            id: product.id,
+
+            name: product.name,
+
+            price: product.price,
+
+            image: product.image,
+
+            quantity: 1
+
+        };
+
+        const existingItem = cart.find(item => item.id === product.id);
+
+        if (existingItem) {
+
+            existingItem.quantity++;
+
+        } else {
+
+            cart.push(cartItem);
+
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        showToast("✅ محصول به سبد خرید اضافه شد.");
+
+    });
+
+}
