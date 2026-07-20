@@ -238,32 +238,7 @@ function decreaseQty(index) {
    Remove Item
 ====================================== */
 
-function removeItem(index){
 
-    if(!confirm("این محصول حذف شود؟")) return;
-
-    cart.splice(index,1);
-
-    saveCart();
-
-    updateCartCount();
-
-    showCart();
-
-    showToast("🗑 محصول حذف شد");
-
-}
-
-
-    cart.splice(index, 1);
-
-    saveCart();
-
-    updateCartCount();
-
-    showCart();
-
-}
 
 /* ======================================
    Init
@@ -275,59 +250,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showCart();
 
+    const checkoutBtn = document.querySelector("#checkoutBtn");
 
-});
+    if (checkoutBtn) {
 
+        checkoutBtn.addEventListener("click", () => {
 
-/* ======================================
-   Checkout WhatsApp
-====================================== */
+            if (cart.length === 0) {
 
-const checkoutBtn = document.querySelector("#checkoutBtn");
+                showToast("سبد خرید خالی است.");
 
-if (checkoutBtn) {
+                return;
 
-    checkoutBtn.addEventListener("click", () => {
+            }
 
-        if (cart.length === 0) {
+            let message = "سلام، می‌خواهم این محصولات را سفارش بدهم:%0A%0A";
 
-            alert("سبد خرید خالی است.");
+            let total = 0;
 
-            return;
+            cart.forEach(item => {
 
-        }
+                const price = Number(item.price.replace(/,/g,""));
 
-        let message = "سلام، می‌خواهم این محصولات را سفارش بدهم:%0A%0A";
+                total += price * item.quantity;
 
-        let total = 0;
+                message +=
 
-        cart.forEach(item => {
+                `• ${item.name} × ${item.quantity}%0A` +
 
-            const price = Number(item.price.toString().replace(/,/g, ""));
+                `${item.price} تومان%0A%0A`;
 
-            total += price * item.quantity;
+            });
 
             message +=
-                `• ${item.name} × ${item.quantity}%0A` +
-                `${item.price} تومان%0A%0A`;
+
+            `جمع کل:%0A${total.toLocaleString("fa-IR")} تومان`;
+
+            const phone = "989134604978";
+
+            window.open(
+
+                `https://wa.me/${phone}?text=${message}`,
+
+                "_blank"
+
+            );
 
         });
 
-        message +=
-            `جمع کل:%0A${total.toLocaleString("fa-IR")} تومان`;
+    }
 
-        const phone = "989134604978";
-
-        window.open(
-
-            `https://wa.me/${phone}?text=${message}`,
-
-            "_blank"
-
-        );
-
-    });
-
-}
-
+});
 
