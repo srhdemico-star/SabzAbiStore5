@@ -2330,11 +2330,11 @@ a{
 
 .cart-info p{
 
-    color:#00a86b;
+    color:#666;
 
-    font-weight:700;
+    font-size:16px;
 
-    font-size:18px;
+    margin:6px 0;
 
 }
 
@@ -2463,6 +2463,31 @@ color:#fff;
 background:#c62828;
 
 }
+
+
+/* ===========================
+   Cart Row Total
+=========================== */
+
+.row-total{
+
+    margin-top:8px;
+
+    color:#0f766e;
+
+    font-weight:700;
+
+    font-size:15px;
+
+}
+
+.row-total strong{
+
+    font-size:18px;
+
+}
+
+
 
 
 	
