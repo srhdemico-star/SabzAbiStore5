@@ -2488,6 +2488,29 @@ background:#c62828;
 }
 
 
+/* =========================
+Compact Sections
+========================= */
+
+.categories,
+.featured,
+.why-us,
+.about-short,
+.counter,
+.features,
+.cta{
+    padding:70px 0;
+}
+
+.section-header{
+    margin-bottom:40px;
+}
+
+.hero{
+    padding:90px 0;
+}
+
+
 
 
 	
