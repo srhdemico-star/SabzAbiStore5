@@ -150,7 +150,7 @@ SECTION
 
 section{
 
-    padding:70px 0;
+    padding:55px 0;
 
 }
 
@@ -165,7 +165,7 @@ SECTION HEADER
 
     text-align:center;
 
-    margin-bottom:45px;
+    margin-bottom:28px;
 
 }
 
@@ -556,7 +556,7 @@ HERO SECTION
 
 .hero{
 
-    padding:80px 0;
+    padding:60px 0;
 
     overflow:hidden;
 
@@ -767,7 +767,7 @@ CATEGORY SECTION
 
 .categories{
 
-    padding:70px 0;
+    padding:50px 0;
 
 }
 
@@ -863,7 +863,7 @@ FEATURES SECTION
 
     background:#f8fafc;
 
-    padding:70px 0;
+    padding:50px 0;
 
 }
 
@@ -958,7 +958,7 @@ PRODUCT SECTION
 .featured,
 .products{
 
-    padding:80px 0;
+    padding:55px 0;
 
 }
 
@@ -1304,7 +1304,7 @@ ABOUT SECTION
 
 .about{
 
-    padding:80px 0;
+    padding:55px 0;
 
     background:#f8fafc;
 
@@ -1396,7 +1396,7 @@ CTA SECTION
 
 .cta{
 
-    padding:80px 0;
+    padding:60px 0;
 
     background:var(--dark);
 
