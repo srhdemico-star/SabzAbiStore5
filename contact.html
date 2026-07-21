@@ -93,8 +93,20 @@ alt="SabzAbi Store">
 
 
   <li>
-<a class="active" href="terms.html">
+<a href="terms.html">
 قوانین
+</a>
+</li>
+
+  <li>
+<a href="privacy.html">
+حریم خصوصی
+</a>
+</li>
+
+<li>
+<a href="faq.html">
+سوالات متداول
 </a>
 </li>
 
@@ -264,6 +276,29 @@ target="_blank">
 </div>
 
 
+  <div class="contact-card">
+
+<div class="contact-icon">
+
+📧
+
+</div>
+
+<h3>
+
+ایمیل
+
+</h3>
+
+<a href="mailto:sabzabistore@gmail.com">
+
+sabzabistore@gmail.com
+
+</a>
+
+</div>
+
+  
 
 
 
@@ -284,21 +319,18 @@ target="_blank">
 </h3>
 
 
-<a href="#">
+<a href="https://instagram.com/sabzabistore"
+target="_blank">
 
 @sabzabistore
 
 </a>
 
-
 </div>
 
 
 
-
-
 <div class="contact-card">
-
 
 <div class="contact-icon">
 
@@ -306,24 +338,46 @@ target="_blank">
 
 </div>
 
-
 <h3>
 
 آدرس
 
 </h3>
 
-
 <p>
 
-اصفهان
+اصفهان، دولت آباد  ، خیابان مطهری
 
 </p>
 
+</div>
+  
+
+  <div class="contact-card">
+
+<div class="contact-icon">
+
+🕘
 
 </div>
 
+<h3>
 
+ساعات پاسخگویی
+
+</h3>
+
+<p>
+
+همه روزه
+<br>
+۹:۰۰ تا ۱۸:۰۰
+
+</p>
+
+</div>
+
+  
 
 </div>
 
@@ -357,34 +411,29 @@ target="_blank">
 </h2>
 
 
-<form>
-
+<form id="contactForm">
 
 <input
-
 type="text"
-
+id="name"
 placeholder="نام شما">
 
 
 <input
-
 type="tel"
-
+id="phone"
 placeholder="شماره تماس">
 
 
 <input
-
 type="email"
-
+id="email"
 placeholder="ایمیل">
 
 
 <textarea
-
+id="message"
 placeholder="پیام شما">
-
 </textarea>
 
 
@@ -434,7 +483,16 @@ type="submit">
 
 <br>
 
+📍
+<br>
+
 اصفهان
+<br>
+
+دولت آباد
+<br>
+
+خیابان مطهری
 
 </div>
 
@@ -586,6 +644,19 @@ SabzAbi Store
 </a>
 </li>
 
+  <li>
+<a href="terms.html">
+قوانین
+</a>
+</li>
+
+<li>
+<a href="faq.html">
+سوالات متداول
+</a>
+</li>
+  
+
 
 </ul>
 
@@ -623,10 +694,11 @@ SabzAbi Store
 </li>
 
 
-<li>
-📍 اصفهان
-</li>
+<li>📍 اصفهان، دولت اباد</li>
 
+<li>📧 sabzabistore@gmail.com</li>
+
+<li>🕘 پاسخگویی: ۹ تا ۱۸</li>
 
 </ul>
 
@@ -647,8 +719,7 @@ SabzAbi Store
 
 <p>
 
-© 2026 SabzAbi Store
-
+© 2026 SabzAbi Store | تمامی حقوق محفوظ است.
 </p>
 
 
@@ -663,6 +734,82 @@ SabzAbi Store
 
 
 <script src="assets/js/app.js"></script>
+
+  <script>
+
+document
+.getElementById("contactForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById("name").value;
+
+const phoneInput =
+document.getElementById("phone").value;
+
+const email =
+document.getElementById("email").value;
+
+const message =
+document.getElementById("message").value;
+
+  if(name.trim()===""){
+
+    alert("نام را وارد کنید.");
+
+    return;
+
+}
+
+if(phoneInput.trim()===""){
+
+    alert("شماره تماس را وارد کنید.");
+
+    return;
+
+}
+
+if(message.trim()===""){
+
+    alert("پیام را وارد کنید.");
+
+    return;
+
+}
+
+const phone = "989134604978";
+
+let text =
+`سلام
+
+یک پیام جدید از سایت SabzAbi Store
+
+👤 نام:
+${name}
+
+📞 شماره:
+${phoneInput}
+
+📧 ایمیل:
+${email}
+
+💬 پیام:
+${message}`;
+
+window.open(
+
+`https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
+
+"_blank"
+
+);
+
+});
+
+</script>
+  
 
 
 </body>
