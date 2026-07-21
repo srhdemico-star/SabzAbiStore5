@@ -170,7 +170,44 @@ const cartItem = {
 
        updateCartCounter();
 
-        showToast("✅ محصول به سبد خرید اضافه شد.");
+       const modal = document.querySelector("#cartModal");
+
+const modalName = document.querySelector("#modalProductName");
+
+const continueBtn = document.querySelector("#continueShopping");
+
+if(modal){
+
+    modal.classList.add("show");
+
+}
+
+if(modalName){
+
+    modalName.innerText = product.name;
+
+}
+
+if(continueBtn){
+
+    continueBtn.onclick = () => {
+
+        modal.classList.remove("show");
+
+    };
+
+}
+
+modal.onclick = function(e){
+
+    if(e.target === modal){
+
+        modal.classList.remove("show");
+
+    }
+
+};
+
 
     });
 
