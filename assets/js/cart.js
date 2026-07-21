@@ -126,63 +126,66 @@ function showCart() {
 
         total += price * item.quantity;
 
-        container.innerHTML += `
+        const rowTotal = price * item.quantity;
 
-        <div class="cart-item">
+container.innerHTML += `
 
-            <img src="${item.image}" alt="${item.name}">
+<div class="cart-item">
 
-            <div class="cart-info">
+    <img src="${item.image}" alt="${item.name}">
 
-                <h3>${item.name}</h3>
+    <div class="cart-info">
 
-                <p>${item.price} تومان</p>
+        <h3>${item.name}</h3>
 
-            </div>
+        <p>قیمت واحد: ${item.price} تومان</p>
 
-            <div class="cart-actions">
+        <p class="row-total">
+            جمع این محصول:
+            <strong>
+                ${rowTotal.toLocaleString("fa-IR")} تومان
+            </strong>
+        </p>
 
-                <button
+    </div>
 
-                    class="qty-btn"
+    <div class="cart-actions">
 
-                    onclick="decreaseQty(${index})">
+        <button
+            class="qty-btn"
+            onclick="decreaseQty(${index})">
 
-                    −
+            −
 
-                </button>
+        </button>
 
-                <span class="qty-number">
+        <span class="qty-number">
 
-                    ${item.quantity}
+            ${item.quantity}
 
-                </span>
+        </span>
 
-                <button
+        <button
+            class="qty-btn"
+            onclick="increaseQty(${index})">
 
-                    class="qty-btn"
+            +
 
-                    onclick="increaseQty(${index})">
+        </button>
 
-                    +
+        <button
+            class="remove-btn"
+            onclick="removeItem(${index})">
 
-                </button>
+            🗑 حذف
 
-                <button
+        </button>
 
-                    class="remove-btn"
+    </div>
 
-                    onclick="removeItem(${index})">
+</div>
 
-                    🗑 حذف
-
-                </button>
-
-            </div>
-
-        </div>
-
-        `;
+`;
 
     });
 
