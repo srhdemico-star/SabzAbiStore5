@@ -2211,3 +2211,94 @@ text-align:center;
 }
 
 }
+
+/* ===========================
+   Cart Modal
+=========================== */
+
+.cart-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    visibility:hidden;
+
+    opacity:0;
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.cart-modal.show{
+
+    visibility:visible;
+
+    opacity:1;
+
+}
+
+.cart-modal-box{
+
+    width:380px;
+
+    max-width:90%;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
+
+}
+
+.success-icon{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+.cart-modal-box h2{
+
+    margin-bottom:10px;
+
+}
+
+.cart-modal-box p{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+.cart-modal-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.cart-modal-buttons .btn{
+
+    flex:1;
+
+}
+
